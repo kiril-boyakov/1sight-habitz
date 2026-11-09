@@ -1,4 +1,4 @@
-const manager = 'manager@herbits.lt';
+const manager = 'manager@habits.lt';
 const topics = {
   collab: 'Bendradarbiavimas su šefais ir restoranais',
   corporate: 'Restorano nuoma įmonei',

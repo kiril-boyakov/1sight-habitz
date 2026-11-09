@@ -45,11 +45,8 @@ if(hero&&mobileActions&&'IntersectionObserver'in window)new IntersectionObserver
 const categoryLinks=[...document.querySelectorAll('.category-links a')];
 const sections=[...document.querySelectorAll('.menu-section')];
 const categoryNav=document.querySelector('.category-nav');
-const search=document.querySelector('#dish-search');
-const clearSearch=document.querySelector('.clear-search');
-const resultStatus=document.querySelector('.menu-results');
 function setCategory(id){
- for(const a of categoryLinks){const active=a.hash==='#'+id;a.classList.toggle('active',active);if(active)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current')}
+ for(const a of categoryLinks){const active=a.hash==='#'+id;const changed=active&&!a.classList.contains('active');a.classList.toggle('active',active);if(active)a.setAttribute('aria-current','location');else a.removeAttribute('aria-current');if(changed){const row=a.parentElement,box=row.getBoundingClientRect(),item=a.getBoundingClientRect();if(item.left<box.left)row.scrollBy({left:item.left-box.left-2,behavior:'instant'});else if(item.right>box.right)row.scrollBy({left:item.right-box.right+2,behavior:'instant'})}}
 }
 const menuOffset=()=>categoryNav?categoryNav.getBoundingClientRect().height+24:115;
 if(sections.length){
@@ -57,29 +54,9 @@ if(sections.length){
  measure();if('ResizeObserver'in window)new ResizeObserver(measure).observe(categoryNav);
  const update=()=>{const visible=sections.filter(s=>!s.hidden);const active=visible.filter(s=>s.getBoundingClientRect().top<=menuOffset()+5).at(-1)||visible[0];setCategory(active?.id)};
  let scheduled=false;addEventListener('scroll',()=>{if(!scheduled){scheduled=true;requestAnimationFrame(()=>{update();scheduled=false})}},{passive:true});
- for(const a of categoryLinks)a.addEventListener('click',e=>{e.preventDefault();if(search?.value){search.value='';filterMenu()}const section=document.getElementById(a.hash.slice(1));setFragment(a.hash);section.scrollIntoView({behavior:'instant',block:'start'});setCategory(section.id);const heading=section.querySelector('h2');if(e.detail===0){heading.tabIndex=-1;heading.focus({preventScroll:true})}if(!reduced.matches)section.animate([{opacity:.45},{opacity:1}],{duration:320,easing:'ease-out'})});
- const normalized=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase();
- function filterMenu(){
-  const query=normalized(search.value.trim());let count=0;
-  for(const section of sections){
-   let sectionCount=0;
-   for(const group of section.querySelectorAll('.dish-group')){
-    const context=section.querySelector('h2').textContent+' '+(group.querySelector('.dish-group-title')?.textContent||'');
-    let groupCount=0;
-    for(const dish of group.querySelectorAll('.dish')){
-     dish.hidden=!normalized(context+' '+dish.textContent).includes(query);
-     if(!dish.hidden)groupCount++;
-    }
-    group.hidden=!groupCount;
-    sectionCount+=groupCount;
-   }
-   section.hidden=!sectionCount;
-   count+=sectionCount;
-  }
-  clearSearch.hidden=!query;resultStatus.textContent=query?(count?resultStatus.dataset.count+' '+count:resultStatus.dataset.empty):'';update();
- }
- if(search){search.closest('.menu-search').hidden=false;search.addEventListener('input',filterMenu);search.addEventListener('keydown',e=>{if(e.key==='Escape'){search.value='';filterMenu()}});clearSearch.addEventListener('click',()=>{search.value='';filterMenu();search.focus()})}
- document.fonts?.ready.then(update);addEventListener('resize',update,{passive:true});update();
+ for(const a of categoryLinks)a.addEventListener('click',e=>{e.preventDefault();const section=document.getElementById(a.hash.slice(1));setFragment(a.hash);section.scrollIntoView({behavior:'instant',block:'start'});setCategory(section.id);const heading=section.querySelector('h2');if(e.detail===0){heading.tabIndex=-1;heading.focus({preventScroll:true})}if(!reduced.matches)section.animate([{opacity:.45},{opacity:1}],{duration:320,easing:'ease-out'})});
+ const followHash=()=>{const target=document.getElementById(decodeURIComponent(location.hash.slice(1)));if(target)target.scrollIntoView({behavior:'instant',block:'start'});update()};
+ if(document.fonts)document.fonts.ready.then(followHash);else followHash();addEventListener('hashchange',followHash);addEventListener('resize',update,{passive:true});update();
 }
 
 // Scroll is always native. Only the visible photographs respond to its position.

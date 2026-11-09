@@ -21,11 +21,21 @@ def menu_sections(menu, lang, copy, picture):
         html.append(
             f'<section class="menu-section" id="{category_id}">'
             f'<div class="category-intro"><h2>{escape(category[lang])}</h2>'
-            f'<div class="category-photo">{picture(image, alt)}</div>'
         )
+        html.append(f'<div class="category-photo">{picture(image, alt)}</div>')
+        if category_id == 'lunch':
+            html.append(f'<div class="category-photo category-photo-extra">{picture("menu-lunch-main", copy["altMenu-lunch-main"])}</div>')
+        if category_id == 'coffee':
+            html.append(f'<div class="category-photo category-photo-extra tea-photo">{picture("menu-tea", copy["altMenu-tea"])}</div>')
+            html.append(f'<a class="photo-credit" href="https://www.publicdomainpictures.net/view-image.php?image=4291&amp;picture=cup-of-tea-isolated" target="_blank" rel="noopener noreferrer">{copy["teaCredit"]} · Petr Kratochvil</a>')
         if note:
             html.append(f'<p class="category-note">{escape(note)}</p>')
         html.append('</div><div class="category-dishes">')
+        if category_id == 'lunch':
+            combo = format_price(12, lang)
+            html.append(f'<div class="lunch-offer"><div><p class="lunch-days">{copy["lunchDays"]}</p><p class="lunch-hours">11:00–14:00</p></div><div class="lunch-combo"><span>{copy["lunchCombo"]}</span><strong>{combo}</strong></div><p class="lunch-individual">{copy["lunchSoup"]} {format_price(3.5, lang)} <span>·</span> {copy["lunchMain"]} {format_price(11, lang)}</p></div>')
+        if category.get('format') == 'collaboration':
+            html.append(f'<div class="dinner-invitation"><p class="eyebrow">{copy["dinnerBadge"]}</p><h3>{copy["dinnerTitle"]}</h3><p>{copy["dinnerCopy"]}</p><div class="dinner-actions"><a class="button primary" href="https://www.instagram.com/habits.vilnius/" target="_blank" rel="noopener noreferrer">{copy["dinnerNews"]}</a><a class="text-link" href="mailto:manager@habits.lt">{copy["dinnerEnquiry"]}</a></div></div>')
         index = 0
         for group in category['groups']:
             html.append('<div class="dish-group">')

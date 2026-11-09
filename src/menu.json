@@ -3,12 +3,12 @@
   "categories": [
     {
       "id": "breakfast",
-      "lt": "Pusryčiai ir pietūs",
-      "en": "Brunch & bowls",
+      "lt": "Pusryčiai",
+      "en": "Breakfast",
       "image": "menu-breakfast",
       "notes": {
-        "lt": "Pagrindiniai patiekalai yra ir pirmadienio–ketvirtadienio, ir išplėstiniame meniu. Papildomi patiekalai pažymėti atskirai.",
-        "en": "The selection below appears on both the Monday–Thursday and full menus. Additional full-menu dishes are listed separately."
+        "lt": "Kiaušiniai, saldūs pusryčiai, salotos ir dubenėliai. Išplėstinio meniu patiekalai pažymėti atskirai.",
+        "en": "Eggs, sweet breakfasts, salads and bowls. Full-menu additions are marked separately."
       },
       "groups": [
         {
@@ -277,8 +277,8 @@
       "en": "Weekday lunch",
       "image": "menu-lunch",
       "notes": {
-        "lt": "11:00–14:00 · Sriuba 3,50 €. Dienos patiekalas 11 €. Patiekalas su sriuba 12 €.",
-        "en": "11:00–14:00 · Soup €3.50. Main €11. Main with soup €12."
+        "lt": "",
+        "en": ""
       },
       "groups": [
         {
@@ -419,10 +419,22 @@
       ]
     },
     {
+      "id": "dinner",
+      "lt": "Vakarienės",
+      "en": "Dinner",
+      "image": "menu-dinner",
+      "notes": {
+        "lt": "",
+        "en": ""
+      },
+      "groups": [],
+      "format": "collaboration"
+    },
+    {
       "id": "coffee",
       "lt": "Kava ir arbata",
       "en": "Coffee & tea",
-      "image": "coffee",
+      "image": "menu-coffee",
       "notes": {
         "lt": "",
         "en": ""
@@ -565,7 +577,7 @@
       "id": "drinks",
       "lt": "Gaivieji gėrimai ir alus",
       "en": "Soft drinks & beer",
-      "image": "menu-drinks",
+      "image": "menu-refreshments",
       "notes": {
         "lt": "",
         "en": ""

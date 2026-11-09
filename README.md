@@ -13,3 +13,5 @@ Open http://127.0.0.1:8765/ for Lithuanian or /en/ for English. The demo server 
 The menu is maintained in `src/menu.json`. Prices are restaurant prices in euros. The weekday lunch selection and Monday–Thursday differences follow the supplied menu sheets. Pages are generated in `dist/`. Set `HABITS_SITE_ORIGIN` when generating for a different origin.
 
 The demo uses the original HABITS photography, wordmark and fonts. Public event photos link back to the venue’s Breezit gallery and the Sardinele collaboration. Partner stories and translations are maintained in `experiences.py`.
+
+Build the current standalone v6 preview with `python3 preview/build_preview.py`. Menu photo sources and the neutral tea illustration are documented in [MEDIA.md](MEDIA.md). Dinner is a separate collaboration format; its individual event menu is announced by HABITS.

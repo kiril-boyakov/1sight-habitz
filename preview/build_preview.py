@@ -7,7 +7,7 @@ import re
 
 ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / 'dist'
-OUTPUT = ROOT / 'preview' / 'HABITS-preview-v5.html'
+OUTPUT = ROOT / 'preview' / 'HABITS-preview-v6.html'
 
 assets = {}
 images = json.loads((ROOT / 'src' / 'images.json').read_text())
@@ -38,8 +38,8 @@ if (inquiry) {
   inquiry.addEventListener('submit', event => {
     event.preventDefault();
     inquiry.querySelector('[role="status"]').textContent = document.documentElement.lang === 'lt'
-      ? 'Tai peržiūra. Dėl užklausos parašykite manager@herbits.lt.'
-      : 'This is a preview. To make an enquiry, email manager@herbits.lt.';
+      ? 'Tai peržiūra. Dėl užklausos parašykite manager@habits.lt.'
+      : 'This is a preview. To make an enquiry, email manager@habits.lt.';
   });
 }
 """

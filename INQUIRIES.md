@@ -19,6 +19,6 @@ The Worker uses the same D1 binding and handles form submissions itself.
 Each accepted enquiry is stored before success is shown. The D1 console provides
 access to the inbox for authorized operators. To enable email notifications,
 set the `RESEND_API_KEY` secret and `INQUIRY_FROM` to a verified sending
-address. Notifications go to `manager@herbits.lt`, with the visitor as Reply-To.
+address. Notifications go to `manager@habits.lt`, with the visitor as Reply-To.
 Rows with `notified = 0` are available for manual follow-up if delivery
 is disabled or fails. The form always displays the manager's direct email.

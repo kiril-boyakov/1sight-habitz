@@ -280,3 +280,73 @@
 .archive-heading img{object-position:50% 62%}
 @media(max-width:700px){.instant-wall{grid-template-rows:auto;gap:0;padding-top:28px;padding-bottom:36px}}
 @media(prefers-reduced-motion:reduce){.archive-heading>picture{transform:none;will-change:auto}}
+
+/* Navigation shares the rounded HABITS heading face. */
+.desktop-nav,.desktop-nav>.button,.mobile-dialog nav,.no-script,.category-links a{font-family:var(--brand);font-weight:400;letter-spacing:-.015em}
+.desktop-nav{font-size:13px;gap:clamp(16px,2.2vw,34px)}
+.desktop-nav>.button{font-size:11px}
+.category-nav{padding-block:14px;min-height:82px;display:block}
+.category-links{width:100%;gap:9px;scrollbar-width:thin;padding:4px 2px;scroll-padding-inline:2px}
+.category-links a{border-radius:100px;padding:13px 20px;font-size:13px;min-height:46px;display:flex;align-items:center;justify-content:center}
+.category-links a:focus-visible{outline-offset:-3px}
+.category-links a.active{border-radius:100px}
+
+/* Three clear routes into the menu, each with its own photograph. */
+.meal-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(20px,3vw,45px)}
+.meal-card{min-width:0;display:flex;flex-direction:column;align-items:start}
+.meal-card-main{display:block;width:100%}
+.meal-card-photo{position:relative;overflow:hidden;border-radius:120px 120px 28px 28px;aspect-ratio:4/4.2;background:var(--stone);margin-bottom:25px}
+.meal-card-photo picture{height:100%}
+.meal-card-photo img{height:100%;transition:transform .7s cubic-bezier(.16,1,.3,1)}
+.meal-card:nth-child(2) .meal-card-photo img{object-position:50% 0%}
+.meal-card:nth-child(2) .meal-card-photo{border-radius:28px 28px 120px 28px}
+.meal-card:nth-child(3) .meal-card-photo{border-radius:120px 28px 28px 28px}
+.meal-card-open{position:absolute;right:18px;bottom:18px;display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:var(--paper);color:var(--red);font:25px var(--body);transition:background .25s,color .25s,transform .25s}
+.meal-card h3{font:400 clamp(24px,2.5vw,38px)/1.15 var(--brand);letter-spacing:-.04em;color:var(--red);text-wrap:balance;margin-bottom:14px}
+.meal-card-main>p{font-size:13px;line-height:1.8;max-width:32em;margin-bottom:24px}
+.meal-card:focus-within .meal-card-photo img,.meal-card:hover .meal-card-photo img{transform:scale(1.055)}
+.meal-card:focus-within .meal-card-open,.meal-card:hover .meal-card-open{background:var(--red);color:var(--paper);transform:rotate(-8deg)}
+.meal-card-links,.meal-card-pill{margin-top:auto;display:flex;gap:8px}
+.meal-card-links a,.meal-card-pill{border:1px solid var(--red);border-radius:100px;padding:10px 17px;font:400 12px/1.6 var(--brand);color:var(--red);min-height:44px;align-items:center;justify-content:center;transition:background .2s,color .2s}
+.meal-card-links a:hover,.meal-card-pill:hover{background:var(--red);color:var(--paper)}
+.meal-card-pill{gap:22px}.meal-card-pill span{font-size:16px}
+
+/* The lunch offer is readable before the individual weekday dishes. */
+.lunch-offer{background:var(--red);color:var(--paper);border-radius:32px;padding:28px 30px;display:grid;grid-template-columns:1fr auto;gap:22px;margin-bottom:35px;align-items:center}
+.lunch-days{font:500 12px/1.5 var(--body)}
+.lunch-hours{font:400 clamp(25px,3.2vw,48px)/1.25 var(--brand);letter-spacing:-.04em;margin-top:8px;white-space:nowrap}
+.lunch-combo{display:flex;align-items:center;gap:18px}
+.lunch-combo>span{font:500 13px/1.5 var(--body);max-width:120px}
+.lunch-combo strong{font:400 clamp(35px,4.5vw,64px)/1 var(--brand);white-space:nowrap}
+.lunch-individual{grid-column:1/-1;font-size:12px;border-top:1px solid #fff6e850;padding-top:17px}
+.lunch-individual span{padding-inline:10px}
+.category-photo-extra{margin-top:20px}
+#lunch .category-photo,#lunch .category-photo-extra{border-radius:28px;transform:none;aspect-ratio:1.15;width:100%;max-width:280px}
+#lunch .category-photo img{object-position:50% 10%}
+#coffee .category-photo,#coffee .category-photo-extra{border-radius:50%;transform:none;aspect-ratio:1;width:clamp(130px,16vw,210px)}
+#coffee .tea-photo{margin-left:45px;margin-top:-25px;border:7px solid var(--paper);background:white}
+#coffee .tea-photo img{object-fit:contain}
+.photo-credit{display:block;font:10px/1.5 var(--body);text-decoration:underline;text-underline-offset:3px;max-width:250px;margin-top:14px;color:#686052}
+#drinks .category-photo{border-radius:50%;transform:none;aspect-ratio:1;background:var(--stone)}
+#drinks .category-photo picture{height:100%;width:100%;overflow:hidden}
+#drinks .category-photo img{width:320%;max-width:none;height:448%;object-fit:fill;transform:translate(-60%,-34.5%)}
+#cocktails .category-photo img{object-position:50% 50%}
+.dinner-invitation{padding:35px 0 30px}
+.dinner-invitation h3{font:400 clamp(34px,4vw,56px)/1.1 var(--display);letter-spacing:-.05em;margin:25px 0;color:var(--red);max-width:11em}
+.dinner-invitation>p:not(.eyebrow){font-size:14px;line-height:1.9;max-width:560px}
+.dinner-actions{display:flex;align-items:center;flex-wrap:wrap;gap:20px 30px;margin-top:30px}
+.dinner-actions .button{white-space:normal;text-align:center}
+@media(max-width:1100px){.lunch-offer{grid-template-columns:1fr}.lunch-combo{justify-content:space-between}.lunch-combo>span{max-width:none}.meal-card h3{font-size:25px}.meal-card-links{flex-wrap:wrap}}
+@media(max-width:800px){.desktop-nav{font-size:12px}.meal-cards{gap:20px}.meal-card h3{font-size:22px}.meal-card-main>p{font-size:12px}.meal-card-photo{aspect-ratio:3/4}.meal-card-links a,.meal-card-pill{font-size:10px;padding:10px 12px}.meal-card-pill{gap:12px}.category-nav{padding-block:10px}.category-links{justify-content:flex-start}.category-links a{font-size:12px;padding:11px 17px}.lunch-offer{padding:24px}}
+@media(max-width:600px){.meal-cards{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:22px;padding:0 var(--gutter) 20px;margin:0 calc(-1 * var(--gutter));scroll-padding-left:var(--gutter)}.meal-card{flex:0 0 84%;scroll-snap-align:start}.meal-card:last-child{margin-right:var(--gutter)}.meal-card-photo{aspect-ratio:4/3.8}.meal-card h3{font-size:30px}.meal-card-main>p{font-size:13px;min-height:3.6em}.meal-card-links a,.meal-card-pill{font-size:12px}.meal-card-links{flex-wrap:nowrap}.category-intro{grid-template-columns:minmax(0,1fr) 105px;align-items:start}.category-photo{grid-row:1/4}.category-photo-extra{grid-column:2;grid-row:auto;display:none}.category-note{max-width:100%;font-size:15px}.category-photo,.menu-section:nth-child(2n) .category-photo{width:105px}.menu-section h2{font-size:clamp(30px,8vw,41px)}
+#lunch .category-intro,#coffee .category-intro{grid-template-columns:1fr 1fr;column-gap:16px;row-gap:14px}
+#lunch .category-intro h2,#coffee .category-intro h2{grid-column:1/-1;grid-row:1}
+#lunch .category-photo,#coffee .category-photo{display:block;grid-column:1;grid-row:2;width:100%;max-width:none;margin:0;border-radius:26px;aspect-ratio:1.2;transform:none}
+#lunch .category-photo-extra,#coffee .category-photo-extra{grid-column:2;grid-row:2;margin:0;border:0}
+#coffee .category-photo{border-radius:50%;aspect-ratio:1}
+#coffee .photo-credit{grid-column:2;grid-row:3;margin:0;font-size:9px}
+#coffee .tea-photo{background:#fff}
+#drinks .category-photo{width:105px}.lunch-offer{border-radius:26px;gap:20px;padding:25px;margin-bottom:28px}.lunch-hours{font-size:34px}.lunch-combo strong{font-size:50px}.lunch-combo>span{font-size:13px}.lunch-individual{font-size:11px}.dinner-invitation{padding-top:12px}.dinner-invitation h3{font-size:39px}.dinner-actions{display:grid;gap:20px;justify-items:start}}
+@media(prefers-reduced-motion:reduce){.meal-card-photo img,.meal-card-open{transition:none}.meal-card:hover .meal-card-photo img,.meal-card:focus-within .meal-card-photo img{transform:none}}
+
+.mobile-dialog nav a{font-family:var(--brand)}

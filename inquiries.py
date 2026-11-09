@@ -39,7 +39,7 @@ def inquiry_form(lang):
     privacy = '/privacy/' if lang == 'lt' else '/en/privacy/'
     return f'''<section class="contact-inquiry" id="inquiry" aria-labelledby="inquiry-title">
     <div class="inquiry-intro"><h2 id="inquiry-title">{t["heading"]}</h2>
-    <p>{t["direct"]}<br><a class="text-link" href="mailto:manager@herbits.lt">manager@herbits.lt</a></p></div>
+    <p>{t["direct"]}<br><a class="text-link" href="mailto:manager@habits.lt">manager@habits.lt</a></p></div>
     <form id="inquiry-form" action="/api/inquiries" method="post" hidden data-sending="{t["sending"]}" data-success="{t["success"]}" data-demo="{t["demo"]}" data-error="{t["error"]}">
     <label class="inquiry-wide">{t["kind"]}<select name="kind" id="inquiry-kind" required>
     <option value="">{t["choose"]}</option>{options}</select></label>
