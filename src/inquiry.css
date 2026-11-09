@@ -7,3 +7,7 @@
 .inquiry-send a{text-decoration:underline;font-size:.85rem}.inquiry-status:empty{display:none}.inquiry-status{font-weight:600}.inquiry-send button:disabled{opacity:.7;cursor:progress}
 @media(max-width:750px){.contact-inquiry{grid-template-columns:1fr;gap:1.5rem}}
 @media(max-width:520px){#inquiry-form:not([hidden]){grid-template-columns:1fr}}
+
+#inquiry-form :is(input,select){border-radius:100px;min-height:58px;padding:15px 23px;border-color:#862d2555;background:#fffdf7}
+#inquiry-form textarea{border-radius:28px;min-height:150px;padding:20px 23px;border-color:#862d2555;background:#fffdf7}
+#inquiry-form :is(input,select,textarea):focus-visible{outline:2px solid var(--red);outline-offset:3px}

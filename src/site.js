@@ -129,3 +129,19 @@ if (pathButtons.length) {
     });
   });
 }
+
+for (const gallery of document.querySelectorAll('.instant-gallery')) {
+  const wall = gallery.querySelector('.instant-wall');
+  const scrollWall = direction => wall.scrollBy({
+    left: direction * Math.max(230, wall.clientWidth * .75),
+    behavior: reduced.matches ? 'instant' : 'smooth'
+  });
+  gallery.querySelectorAll('[data-gallery-step]').forEach(button => {
+    button.addEventListener('click', () => scrollWall(Number(button.dataset.galleryStep)));
+  });
+  wall.addEventListener('keydown', event => {
+    if (event.target !== wall || !['ArrowLeft', 'ArrowRight'].includes(event.key)) return;
+    event.preventDefault();
+    scrollWall(event.key === 'ArrowLeft' ? -1 : 1);
+  });
+}

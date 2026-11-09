@@ -1,8 +1,10 @@
 """The event archive and four enquiry paths share one place on the homepage."""
 
-GALLERY = 'https://breezit.lt/habits-bakery'
-ARCHIVE = 'https://www.findglocal.com/LT/Kaunas/110119375344752/Habits-Bakery'
-PHOTOS = 'https://breezit.s3.eu-north-1.amazonaws.com/'
+from html import escape
+from pathlib import Path
+import json
+
+GALLERY = json.loads((Path(__file__).resolve().parent / 'src/gallery.json').read_text())
 CONTENT = {
     'lt': {
         'label': 'RENGINIAI IR PARTNERYSTĖS', 'title': 'Prie vieno stalo.',
@@ -17,10 +19,6 @@ CONTENT = {
             ('celebration', 'Asmeninės šventės', 'Šiandien švenčiate jūs.',
              'Vestuvės, gimtadienis ar vakarienė su artimiausiais. Pasidalykite savo data, svečių skaičiumi ir tuo, kaip įsivaizduojate vakarą.'),
         ],
-        'photos': [('Vestuvės HABITS', 'Jaunavedžiai ir svečiai su šaltosiomis ugnelėmis'), ('Šventės stalas', 'Gėlėmis papuoštas šventės stalas'), ('Vakaras su svečiais', 'Šventės svečiai HABITS restorane')],
-        'motif': 'HABITS × MOTÍF', 'motif_note': '2026 05 21 · Antroji bendra vakarienė',
-        'ug': 'HABITS × Ugruzina', 'ug_note': 'Svečių virtuvė', 'archive': 'Vakarienės skelbimas',
-        'gallery':'Renginių galerija', 'partner':'Mūsų partneris', 'photos_link':'Visa švenčių galerija',
     },
     'en': {
         'label': 'EVENTS & PARTNERSHIPS', 'title': 'Around one table.',
@@ -35,30 +33,33 @@ CONTENT = {
             ('celebration', 'Private celebrations', 'A table for your occasion.',
              'A wedding, a birthday or dinner with the people closest to you. Share your date, guest count and what you have in mind for the evening.'),
         ],
-        'photos': [('A HABITS wedding', 'Newlyweds and guests holding sparklers'), ('Set for dinner', 'Flowers on a table set for a celebration'), ('An evening at HABITS', 'Party guests inside HABITS')],
-        'motif': 'HABITS × MOTÍF', 'motif_note': '21 May 2026 · Our second dinner together',
-        'ug': 'HABITS × Ugruzina', 'ug_note': 'Guest kitchen', 'archive': 'Dinner announcement',
-        'gallery':'Event gallery', 'partner':'Our partner', 'photos_link':'See the celebration gallery',
     },
 }
 
+def instant_gallery(kind, lang):
+    preferred = [photo for photo in GALLERY if kind in photo['kinds']]
+    others = [photo for photo in GALLERY if kind not in photo['kinds']]
+    title = 'Akimirkos iš HABITS' if lang == 'lt' else 'Moments at HABITS'
+    previous = 'Ankstesnės nuotraukos' if lang == 'lt' else 'Previous photos'
+    following = 'Kitos nuotraukos' if lang == 'lt' else 'Next photos'
+    cards = []
+    for photo in preferred + others:
+        caption = escape(photo[lang])
+        cards.append(f'''<a class="instant-photo" href="{escape(photo['url'])}" target="_blank" rel="noopener noreferrer" aria-label="{caption} · Instagram">
+        <figure><img src="/assets/{photo['file']}" loading="lazy" width="{photo['width']}" height="{photo['height']}" alt="{caption}">
+        <figcaption><span>{caption}</span><small>Instagram ↗</small></figcaption></figure></a>''')
+    return f'''<div class="instant-gallery"><div class="gallery-toolbar"><p>{title}</p><div class="gallery-arrows">
+        <button type="button" class="gallery-arrow" data-gallery-step="-1" aria-controls="wall-{kind}" aria-label="{previous}">←</button>
+        <button type="button" class="gallery-arrow" data-gallery-step="1" aria-controls="wall-{kind}" aria-label="{following}">→</button>
+        </div></div><div class="instant-wall" id="wall-{kind}" role="region" tabindex="0" aria-label="{title}">{''.join(cards)}</div></div>'''
+
+
 def experiences(lang, picture, labels):
     copy = CONTENT[lang]
-    paths = copy['paths']
-    nav = ''.join(f'<button type="button" role="tab" id="tab-{key}" aria-controls="path-{key}" aria-selected="false" data-path="{key}">{label}</button>' for key,label,*_ in paths)
+    nav = ''.join(f'<button type="button" role="tab" id="tab-{key}" aria-controls="path-{key}" aria-selected="false" data-path="{key}">{label}</button>' for key,label,*_ in copy['paths'])
     panels = []
-    for key, label, title, description in paths:
-        if key == 'collab':
-            visual = f'''<div class="dinner-archive"><div><small>{copy['ug_note']}</small><b>{copy['ug']}</b></div>
-                <div><small>{copy['motif_note']}</small><b>{copy['motif']}</b><a class="text-link" href="{ARCHIVE}" target="_blank" rel="noopener">{copy['archive']} ↗</a></div></div>'''
-            visual = f'<div class="collab-album">{picture("evening",labels["altEvening"])}{visual}</div>'
-        elif key == 'bakery':
-            visual = f'''<figure class="bakery-partner">{picture('pastry',labels['altPastry'])}<figcaption>{copy['partner']} · <a href="https://strangelove.lt/">Strange Love ↗</a></figcaption></figure>'''
-        else:
-            scenes = [('venue', 'Restorano erdvė', 'The restaurant'), ('interior', 'Interjeras', 'Inside HABITS')] if key=='corporate' else [('table', 'Prie stalo', 'Around the table'), ('evening', 'Vakaro nuotaika', 'Evening atmosphere'), ('terrace', 'Terasoje', 'On the terrace')]
-            figures = ''.join(f'<figure><a href="{GALLERY}" target="_blank" rel="noopener">{picture(image, labels["alt"+image.capitalize()])}</a><figcaption>{lt if lang=="lt" else en}</figcaption></figure>' for image,lt,en in scenes)
-            visual = f'<div class="occasion-gallery">{figures}<a class="gallery-source" href="{GALLERY}">{copy["photos_link"]} ↗</a></div>'
+    for key, label, title, description in copy['paths']:
         panels.append(f'''<article class="path-panel" role="tabpanel" aria-labelledby="tab-{key}" id="path-{key}"><div class="path-description"><h3>{title}</h3><p>{description}</p>
-        <a class="button primary" data-inquiry-kind="{key}" href="#inquiry">{copy['cta']} ↗</a></div>{visual}</article>''')
+        <a class="button primary" data-inquiry-kind="{key}" href="#inquiry">{copy['cta']} ↗</a></div>{instant_gallery(key, lang)}</article>''')
     return f'''<section id="together" class="together"><header class="archive-heading">{picture('evening',labels['altEvening'])}<div><p class="eyebrow">{copy['label']}</p><h2>{copy['title']}</h2></div></header>
     <div class="path-nav" role="tablist" aria-label="{copy['categories']}">{nav}</div>{''.join(panels)}</section>'''

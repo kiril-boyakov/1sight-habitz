@@ -1,0 +1,138 @@
+[
+  {
+    "id": "dinner",
+    "file": "instagram-dinner.webp",
+    "url": "https://www.instagram.com/habits.vilnius/p/DfUktyEiHl6/",
+    "lt": "Prie vakarienės stalo",
+    "en": "Dinner together",
+    "kinds": [
+      "collab",
+      "corporate",
+      "celebration"
+    ],
+    "width": 480,
+    "height": 640
+  },
+  {
+    "id": "mbt",
+    "file": "instagram-mbt.webp",
+    "url": "https://www.instagram.com/mbtofficial__/p/Der2ppfx3M6/",
+    "lt": "HABITS × M•BT",
+    "en": "HABITS × M•BT",
+    "kinds": [
+      "collab",
+      "corporate"
+    ],
+    "width": 496,
+    "height": 640
+  },
+  {
+    "id": "fondue",
+    "file": "instagram-fondue.webp",
+    "url": "https://www.instagram.com/habits.vilnius/reel/DfFgveGIKM1/",
+    "lt": "Pasidalinkim",
+    "en": "Made to share",
+    "kinds": [
+      "collab",
+      "corporate",
+      "celebration"
+    ],
+    "width": 360,
+    "height": 640
+  },
+  {
+    "id": "friends",
+    "file": "instagram-friends.webp",
+    "url": "https://www.instagram.com/habits.vilnius/reel/Dd1i7DXo6wu/",
+    "lt": "Gera kompanija",
+    "en": "Good company",
+    "kinds": [
+      "collab",
+      "corporate",
+      "celebration"
+    ],
+    "width": 360,
+    "height": 640
+  },
+  {
+    "id": "afterdark",
+    "file": "instagram-afterdark.webp",
+    "url": "https://www.instagram.com/habits.vilnius/reel/Ddq7yFLIGXy/",
+    "lt": "Kai ateina vakaras",
+    "en": "After dark",
+    "kinds": [
+      "collab",
+      "corporate",
+      "celebration"
+    ],
+    "width": 360,
+    "height": 640
+  },
+  {
+    "id": "dinner-room",
+    "file": "instagram-dinner-room.webp",
+    "url": "https://www.instagram.com/habits.vilnius/p/DbFxWkZiAsK/",
+    "lt": "Vakarienės laukia",
+    "en": "Stay for dinner",
+    "kinds": [
+      "collab",
+      "corporate",
+      "celebration"
+    ],
+    "width": 480,
+    "height": 640
+  },
+  {
+    "id": "pastry-table",
+    "file": "instagram-pastry-table.webp",
+    "url": "https://www.instagram.com/habits.vilnius/p/Dcqei7PCJls/",
+    "lt": "Iš mūsų kepyklos",
+    "en": "From our bakery",
+    "kinds": [
+      "bakery",
+      "celebration"
+    ],
+    "width": 480,
+    "height": 640
+  },
+  {
+    "id": "sandwich",
+    "file": "instagram-sandwich.webp",
+    "url": "https://www.instagram.com/habits.vilnius/p/DdbwaJgCMmp/",
+    "lt": "Pietų pertrauka",
+    "en": "Lunch break",
+    "kinds": [
+      "bakery",
+      "corporate"
+    ],
+    "width": 518,
+    "height": 640
+  },
+  {
+    "id": "dessert",
+    "file": "instagram-dessert.webp",
+    "url": "https://www.instagram.com/habits.vilnius/reel/DeoMbXyooU9/",
+    "lt": "Saldus susitikimas",
+    "en": "Something sweet",
+    "kinds": [
+      "bakery",
+      "celebration"
+    ],
+    "width": 360,
+    "height": 640
+  },
+  {
+    "id": "coffee-table",
+    "file": "instagram-coffee-table.webp",
+    "url": "https://www.instagram.com/habits.vilnius/p/DfRsAXHiEYU/",
+    "lt": "Dar vienam puodeliui",
+    "en": "One more coffee",
+    "kinds": [
+      "bakery",
+      "corporate",
+      "celebration"
+    ],
+    "width": 480,
+    "height": 640
+  }
+]

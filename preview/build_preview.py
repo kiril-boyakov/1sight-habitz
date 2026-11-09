@@ -7,11 +7,12 @@ import re
 
 ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / 'dist'
-OUTPUT = ROOT / 'preview' / 'HABITS-preview-v2.html'
+OUTPUT = ROOT / 'preview' / 'HABITS-preview-v3.html'
 
 assets = {}
 images = json.loads((ROOT / 'src' / 'images.json').read_text())
 photo_files = {v['file'] for image in images.values() for v in image['variants']}
+photo_files.update(photo['file'] for photo in json.loads((ROOT / 'src/gallery.json').read_text()))
 for path in (DIST / 'assets').iterdir():
     if path.suffix == '.ttf' or path.name in photo_files | {'wordmark.png', 'favicon.png', 'social.jpg', 'location-map.svg', 'habits-film.mp4'}:
         mime = mimetypes.guess_type(path.name)[0] or 'application/octet-stream'
