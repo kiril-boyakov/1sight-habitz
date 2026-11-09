@@ -1,3 +1,6 @@
+function setFragment(hash, replace = false) {
+ try { history[replace ? 'replaceState' : 'pushState'](null, '', hash); } catch { /* File previews can block history changes. */ }
+}
 const dialog=document.querySelector('#mobile-navigation');
 const toggle=document.querySelector('.menu-toggle');
 if(dialog&&toggle){
@@ -18,17 +21,18 @@ const film=document.querySelector('.hero-film');
 const filmToggle=document.querySelector('.video-toggle');
 if(hero&&film&&filmToggle){
  film.muted=true;film.defaultMuted=true;
+ let userPaused=false;let heroVisible=true;
  const icon=(playing)=>{filmToggle.classList.toggle('is-paused',!playing);filmToggle.setAttribute('aria-pressed',String(playing));filmToggle.setAttribute('aria-label',playing?filmToggle.dataset.pause:filmToggle.dataset.play)};
  const play=async()=>{if(!film.getAttribute('src'))film.src=film.dataset.src;try{await film.play()}catch{hero.classList.remove('has-video');icon(false)}};
  film.addEventListener('playing',()=>{hero.classList.add('has-video');icon(true)});
  film.addEventListener('pause',()=>icon(false));
  film.addEventListener('error',()=>{hero.classList.remove('has-video');icon(false)});
- filmToggle.addEventListener('click',()=>{if(film.paused)play();else film.pause()});
+ filmToggle.addEventListener('click',()=>{userPaused=!film.paused;if(film.paused)play();else film.pause()});
  const preference=()=>{filmToggle.hidden=reduced.matches;if(reduced.matches){film.pause();hero.classList.remove('has-video')}else if(!navigator.connection?.saveData)play()};
  reduced.addEventListener?.('change',preference);
- document.addEventListener('visibilitychange',()=>{if(document.hidden)film.pause()});
+ document.addEventListener('visibilitychange',()=>{if(document.hidden)film.pause();else if(heroVisible&&!userPaused&&!reduced.matches)play()});
  preference();
- if('IntersectionObserver'in window)new IntersectionObserver(([entry])=>{if(!entry.isIntersecting)film.pause()},{threshold:0}).observe(hero);
+ if('IntersectionObserver'in window)new IntersectionObserver(([entry])=>{heroVisible=entry.isIntersecting;if(!heroVisible)film.pause();else if(!document.hidden&&!userPaused&&!reduced.matches)play()},{threshold:0}).observe(hero);
 }
 const mobileActions=document.querySelector('.mobile-actions');
 if(hero&&mobileActions&&'IntersectionObserver'in window)new IntersectionObserver(([e])=>mobileActions.classList.toggle('hidden',e.isIntersecting),{threshold:.15}).observe(hero);
@@ -47,7 +51,7 @@ if(sections.length){
  measure();if('ResizeObserver'in window)new ResizeObserver(measure).observe(categoryNav);
  const update=()=>{const visible=sections.filter(s=>!s.hidden);const active=visible.filter(s=>s.getBoundingClientRect().top<=menuOffset()+5).at(-1)||visible[0];setCategory(active?.id)};
  let scheduled=false;addEventListener('scroll',()=>{if(!scheduled){scheduled=true;requestAnimationFrame(()=>{update();scheduled=false})}},{passive:true});
- for(const a of categoryLinks)a.addEventListener('click',e=>{e.preventDefault();if(search?.value){search.value='';filterMenu()}const section=document.getElementById(a.hash.slice(1));history.pushState(null,'',a.hash);section.scrollIntoView({behavior:'instant',block:'start'});setCategory(section.id);const heading=section.querySelector('h2');if(e.detail===0){heading.tabIndex=-1;heading.focus({preventScroll:true})}if(!reduced.matches)section.animate([{opacity:.45},{opacity:1}],{duration:320,easing:'ease-out'})});
+ for(const a of categoryLinks)a.addEventListener('click',e=>{e.preventDefault();if(search?.value){search.value='';filterMenu()}const section=document.getElementById(a.hash.slice(1));setFragment(a.hash);section.scrollIntoView({behavior:'instant',block:'start'});setCategory(section.id);const heading=section.querySelector('h2');if(e.detail===0){heading.tabIndex=-1;heading.focus({preventScroll:true})}if(!reduced.matches)section.animate([{opacity:.45},{opacity:1}],{duration:320,easing:'ease-out'})});
  const normalized=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase();
  function filterMenu(){
   const query=normalized(search.value.trim());let count=0;
@@ -92,21 +96,36 @@ if(motionScenes.length&&'IntersectionObserver'in window){
  motionScenes.forEach(el=>motionObserver.observe(el));addEventListener('scroll',schedule,{passive:true});addEventListener('resize',schedule,{passive:true});reduced.addEventListener?.('change',()=>{if(reduced.matches){if(frame)cancelAnimationFrame(frame);frame=0;for(const el of motionScenes)for(const key of ['--drift-y','--scene-inset','--scene-scale','--evening-inset','--evening-y'])el.style.removeProperty(key)}else schedule()});
 }
 
-const pathLinks = [...document.querySelectorAll('[data-path]')];
-if (pathLinks.length) {
-  function selectPath(hash) {
-    const selected = pathLinks.find(link => link.hash === hash) || pathLinks.find(link => link.hasAttribute('aria-current')) || pathLinks[0];
-    for (const link of pathLinks) {
-      document.querySelector(link.hash).hidden = link !== selected;
-      if (link === selected) link.setAttribute('aria-current', 'true');
-      else link.removeAttribute('aria-current');
+const pathButtons = [...document.querySelectorAll('[data-path]')];
+if (pathButtons.length) {
+  function selectPath(key) {
+    const selected = pathButtons.find(button => button.dataset.path === key) || pathButtons[0];
+    for (const button of pathButtons) {
+      const active = button === selected;
+      document.getElementById(button.getAttribute('aria-controls')).hidden = !active;
+      button.setAttribute('aria-selected', String(active));
+      button.tabIndex = active ? 0 : -1;
     }
   }
-  selectPath(location.hash);
-  addEventListener('hashchange', () => selectPath(location.hash));
-  pathLinks.forEach(link => link.addEventListener('click', event => {
-    event.preventDefault();
-    history.replaceState(null, '', link.hash);
-    selectPath(link.hash);
-  }));
+  selectPath(location.hash.replace('#path-', ''));
+  addEventListener('hashchange', () => {
+    if (location.hash.startsWith('#path-')) selectPath(location.hash.slice(6));
+  });
+  pathButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      selectPath(button.dataset.path);
+      setFragment('#path-' + button.dataset.path, true);
+    });
+    button.addEventListener('keydown', event => {
+      let next;
+      if (event.key === 'ArrowRight') next = (index + 1) % pathButtons.length;
+      if (event.key === 'ArrowLeft') next = (index + pathButtons.length - 1) % pathButtons.length;
+      if (event.key === 'Home') next = 0;
+      if (event.key === 'End') next = pathButtons.length - 1;
+      if (next === undefined) return;
+      event.preventDefault();
+      pathButtons[next].focus();
+      pathButtons[next].click();
+    });
+  });
 }

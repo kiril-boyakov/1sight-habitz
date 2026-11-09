@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="400" viewBox="0 0 720 400">
+  <rect width="720" height="400" fill="#e9e5dc"/>
+  <path d="M-30 97C120 157 188 48 349 88S567 165 751 63" fill="none" stroke="#c3cebf" stroke-width="60"/>
+  <path d="M-20 305 745 254M154 115l56 296M509 96l54 319M-40 209l775-49" fill="none" stroke="#f9f6ef" stroke-width="23"/>
+  <path d="m-20 305 765-51M154 115l56 296M509 96l54 319M-40 209l775-49" fill="none" stroke="#d3cdc0" stroke-width="1"/>
+  <g font-family="Arial,sans-serif" fill="#67685d">
+    <text x="535" y="65" font-size="15" letter-spacing="3">PAUPYS</text>
+    <text x="35" y="360" font-size="13">VILNIUS</text>
+    <text x="685" y="375" font-size="11" text-anchor="end">Vietos schema · Location sketch</text>
+  </g>
+  <g transform="translate(360 225)">
+    <circle cy="40" r="35" fill="#862d25" opacity=".1"/>
+    <path d="M0 41C-11 26-28 9-28-9a28 28 0 0 1 56 0C28 9 11 26 0 41" fill="#862d25"/>
+    <circle cy="-9" r="10" fill="#fff9ed"/>
+    <rect x="-70" y="-88" width="140" height="43" rx="21.5" fill="#862d25"/>
+    <text y="-60" text-anchor="middle" fill="#fff9ed" font-family="Arial,sans-serif" font-size="22" font-weight="700" letter-spacing="2">HABITS</text>
+  </g>
+</svg>
