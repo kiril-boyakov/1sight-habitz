@@ -25,9 +25,6 @@ def menu_sections(menu, lang, copy, picture):
         html.append(f'<div class="category-photo">{picture(image, alt)}</div>')
         if category_id == 'lunch':
             html.append(f'<div class="category-photo category-photo-extra">{picture("menu-lunch-main", copy["altMenu-lunch-main"])}</div>')
-        if category_id == 'coffee':
-            html.append(f'<div class="category-photo category-photo-extra tea-photo">{picture("menu-tea", copy["altMenu-tea"])}</div>')
-            html.append(f'<a class="photo-credit" href="https://www.publicdomainpictures.net/view-image.php?image=4291&amp;picture=cup-of-tea-isolated" target="_blank" rel="noopener noreferrer">{copy["teaCredit"]} · Petr Kratochvil</a>')
         if note:
             html.append(f'<p class="category-note">{escape(note)}</p>')
         html.append('</div><div class="category-dishes">')

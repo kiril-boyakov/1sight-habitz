@@ -264,17 +264,6 @@
       }
     ]
   },
-  "menu-tea": {
-    "width": 1200,
-    "height": 800,
-    "variants": [
-      {
-        "file": "menu-tea.webp",
-        "width": 1200,
-        "height": 800
-      }
-    ]
-  },
   "menu-refreshments": {
     "width": 960,
     "height": 1344,

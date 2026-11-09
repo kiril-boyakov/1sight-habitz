@@ -323,10 +323,7 @@
 .category-photo-extra{margin-top:20px}
 #lunch .category-photo,#lunch .category-photo-extra{border-radius:28px;transform:none;aspect-ratio:1.15;width:100%;max-width:280px}
 #lunch .category-photo img{object-position:50% 10%}
-#coffee .category-photo,#coffee .category-photo-extra{border-radius:50%;transform:none;aspect-ratio:1;width:clamp(130px,16vw,210px)}
-#coffee .tea-photo{margin-left:45px;margin-top:-25px;border:7px solid var(--paper);background:white}
-#coffee .tea-photo img{object-fit:contain}
-.photo-credit{display:block;font:10px/1.5 var(--body);text-decoration:underline;text-underline-offset:3px;max-width:250px;margin-top:14px;color:#686052}
+#coffee .category-photo{border-radius:50%;transform:none;aspect-ratio:1;width:clamp(130px,16vw,210px)}
 #drinks .category-photo{border-radius:50%;transform:none;aspect-ratio:1;background:var(--stone)}
 #drinks .category-photo picture{height:100%;width:100%;overflow:hidden}
 #drinks .category-photo img{width:320%;max-width:none;height:448%;object-fit:fill;transform:translate(-60%,-34.5%)}
@@ -339,13 +336,11 @@
 @media(max-width:1100px){.lunch-offer{grid-template-columns:1fr}.lunch-combo{justify-content:space-between}.lunch-combo>span{max-width:none}.meal-card h3{font-size:25px}.meal-card-links{flex-wrap:wrap}}
 @media(max-width:800px){.desktop-nav{font-size:12px}.meal-cards{gap:20px}.meal-card h3{font-size:22px}.meal-card-main>p{font-size:12px}.meal-card-photo{aspect-ratio:3/4}.meal-card-links a,.meal-card-pill{font-size:10px;padding:10px 12px}.meal-card-pill{gap:12px}.category-nav{padding-block:10px}.category-links{justify-content:flex-start}.category-links a{font-size:12px;padding:11px 17px}.lunch-offer{padding:24px}}
 @media(max-width:600px){.meal-cards{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:22px;padding:0 var(--gutter) 20px;margin:0 calc(-1 * var(--gutter));scroll-padding-left:var(--gutter)}.meal-card{flex:0 0 84%;scroll-snap-align:start}.meal-card:last-child{margin-right:var(--gutter)}.meal-card-photo{aspect-ratio:4/3.8}.meal-card h3{font-size:30px}.meal-card-main>p{font-size:13px;min-height:3.6em}.meal-card-links a,.meal-card-pill{font-size:12px}.meal-card-links{flex-wrap:nowrap}.category-intro{grid-template-columns:minmax(0,1fr) 105px;align-items:start}.category-photo{grid-row:1/4}.category-photo-extra{grid-column:2;grid-row:auto;display:none}.category-note{max-width:100%;font-size:15px}.category-photo,.menu-section:nth-child(2n) .category-photo{width:105px}.menu-section h2{font-size:clamp(30px,8vw,41px)}
-#lunch .category-intro,#coffee .category-intro{grid-template-columns:1fr 1fr;column-gap:16px;row-gap:14px}
-#lunch .category-intro h2,#coffee .category-intro h2{grid-column:1/-1;grid-row:1}
-#lunch .category-photo,#coffee .category-photo{display:block;grid-column:1;grid-row:2;width:100%;max-width:none;margin:0;border-radius:26px;aspect-ratio:1.2;transform:none}
-#lunch .category-photo-extra,#coffee .category-photo-extra{grid-column:2;grid-row:2;margin:0;border:0}
-#coffee .category-photo{border-radius:50%;aspect-ratio:1}
-#coffee .photo-credit{grid-column:2;grid-row:3;margin:0;font-size:9px}
-#coffee .tea-photo{background:#fff}
+#lunch .category-intro{grid-template-columns:1fr 1fr;column-gap:16px;row-gap:14px}
+#lunch .category-intro h2{grid-column:1/-1;grid-row:1}
+#lunch .category-photo{display:block;grid-column:1;grid-row:2;width:100%;max-width:none;margin:0;border-radius:26px;aspect-ratio:1.2;transform:none}
+#lunch .category-photo-extra{grid-column:2;grid-row:2;margin:0;border:0}
+#coffee .category-photo{width:105px;border-radius:50%;aspect-ratio:1}
 #drinks .category-photo{width:105px}.lunch-offer{border-radius:26px;gap:20px;padding:25px;margin-bottom:28px}.lunch-hours{font-size:34px}.lunch-combo strong{font-size:50px}.lunch-combo>span{font-size:13px}.lunch-individual{font-size:11px}.dinner-invitation{padding-top:12px}.dinner-invitation h3{font-size:39px}.dinner-actions{display:grid;gap:20px;justify-items:start}}
 @media(prefers-reduced-motion:reduce){.meal-card-photo img,.meal-card-open{transition:none}.meal-card:hover .meal-card-photo img,.meal-card:focus-within .meal-card-photo img{transform:none}}
 
