@@ -60,5 +60,5 @@ def experiences(lang, picture, labels):
     for key, label, title, description in copy['paths']:
         panels.append(f'''<article class="path-panel" role="tabpanel" aria-labelledby="tab-{key}" id="path-{key}"><div class="path-description"><h3>{title}</h3><p>{description}</p>
         <a class="button primary" data-inquiry-kind="{key}" href="#inquiry">{copy['cta']} ↗</a></div>{instant_gallery(key, lang)}</article>''')
-    return f'''<section id="together" class="together"><header class="archive-heading">{picture('evening',labels['altEvening'])}<div><p class="eyebrow">{copy['label']}</p><h2>{copy['title']}</h2></div></header>
+    return f'''<section id="together" class="together"><header class="archive-heading scene-large" data-drift="24">{picture('event-banner',labels['altEvent-banner'])}<div><p class="eyebrow">{copy['label']}</p><h2>{copy['title']}</h2></div></header>
     <div class="path-nav" role="tablist" aria-label="{copy['categories']}">{nav}</div>{''.join(panels)}</section>'''

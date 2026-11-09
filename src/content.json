@@ -93,7 +93,8 @@
     "altMenu-drinks": "ROY kombuča",
     "altMenu-wine": "Vyno taurės HABITS restorane",
     "altMenu-cocktails": "Kokteiliai ir patiekalai HABITS",
-    "altMenu-spirits": "HABITS baras ir gėrimų lentynos"
+    "altMenu-spirits": "HABITS baras ir gėrimų lentynos",
+    "altEvent-banner": "HABITS vakarienės stalas su žvakėmis ir šiltu apšvietimu"
   },
   "en": {
     "menu": "Menu",
@@ -189,6 +190,7 @@
     "altMenu-drinks": "ROY kombucha",
     "altMenu-wine": "Wine glasses at HABITS",
     "altMenu-cocktails": "Cocktails and food at HABITS",
-    "altMenu-spirits": "The HABITS bar and bottles"
+    "altMenu-spirits": "The HABITS bar and bottles",
+    "altEvent-banner": "A candlelit dinner table at HABITS"
   }
 }

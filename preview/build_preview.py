@@ -7,7 +7,7 @@ import re
 
 ROOT = Path(__file__).resolve().parents[1]
 DIST = ROOT / 'dist'
-OUTPUT = ROOT / 'preview' / 'HABITS-preview-v4.html'
+OUTPUT = ROOT / 'preview' / 'HABITS-preview-v5.html'
 
 assets = {}
 images = json.loads((ROOT / 'src' / 'images.json').read_text())

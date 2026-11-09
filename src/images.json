@@ -237,5 +237,21 @@
       "lt": "HABITS baras ir gėrimų lentynos",
       "en": "The HABITS bar and bottles"
     }
+  },
+  "event-banner": {
+    "width": 1300,
+    "height": 866,
+    "variants": [
+      {
+        "file": "event-banner-640.webp",
+        "width": 640,
+        "height": 426
+      },
+      {
+        "file": "event-banner-1300.webp",
+        "width": 1300,
+        "height": 866
+      }
+    ]
   }
 }

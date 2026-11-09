@@ -252,7 +252,7 @@
 .gallery-arrows{display:flex;gap:10px}
 .gallery-arrow{width:46px;height:46px;border-radius:50%;border:1.5px solid var(--red);color:var(--red);font-size:24px;line-height:1}
 .gallery-arrow:hover{background:var(--red);color:var(--paper)}
-.instant-wall{display:grid;grid-template-rows:repeat(2,auto);grid-auto-flow:column;grid-auto-columns:clamp(210px,22vw,280px);gap:24px 0;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;scrollbar-width:thin;scrollbar-color:var(--red) transparent;padding:35px 25px 42px;margin:0 -25px;isolation:isolate}
+.instant-wall{display:grid;grid-template-rows:auto;grid-auto-flow:column;grid-auto-columns:clamp(210px,calc((100% - 50px)/4),330px);gap:0;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;scrollbar-width:thin;scrollbar-color:var(--red) transparent;padding:35px 25px 42px;margin:0 -25px;isolation:isolate}
 .instant-photo{--tilt:-5deg;--lift:0px;display:block;background:#fffdf7;color:var(--ink);padding:12px 12px 0;box-shadow:0 5px 13px #33241c26;transform:translateY(var(--lift)) rotate(var(--tilt));margin-right:-15px;position:relative;z-index:1;scroll-snap-align:start;transition:transform .24s ease,box-shadow .24s ease;transform-origin:50% 65%}
 .instant-photo:nth-child(4n+2){--tilt:4deg;--lift:5px}
 .instant-photo:nth-child(4n+3){--tilt:3deg;--lift:10px}
@@ -272,3 +272,11 @@
 #drinks .category-photo img{object-fit:contain}
 .instant-wall{justify-content:safe center}
 .gallery-arrow:disabled{opacity:.35;cursor:default}
+
+/* One line of instant photos, with depth in the dinner scene. */
+.instant-wall{align-items:center;padding-top:38px;padding-bottom:46px}
+.archive-heading{overflow:hidden}
+.archive-heading>picture{inset:-4% 0;height:108%;transform:translate3d(0,var(--drift-y,0px),0) scale(1.045);will-change:transform}
+.archive-heading img{object-position:50% 62%}
+@media(max-width:700px){.instant-wall{grid-template-rows:auto;gap:0;padding-top:28px;padding-bottom:36px}}
+@media(prefers-reduced-motion:reduce){.archive-heading>picture{transform:none;will-change:auto}}

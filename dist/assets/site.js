@@ -104,13 +104,23 @@ if(motionScenes.length&&'IntersectionObserver'in window){
 
 const pathButtons = [...document.querySelectorAll('[data-path]')];
 if (pathButtons.length) {
-  function selectPath(key) {
+  function selectPath(key, animate = false) {
     const selected = pathButtons.find(button => button.dataset.path === key) || pathButtons[0];
     for (const button of pathButtons) {
       const active = button === selected;
       document.getElementById(button.getAttribute('aria-controls')).hidden = !active;
       button.setAttribute('aria-selected', String(active));
       button.tabIndex = active ? 0 : -1;
+    }
+    if (animate && !reduced.matches) {
+      const panel = document.getElementById(selected.getAttribute('aria-controls'));
+      panel.querySelectorAll('.instant-photo figure').forEach((figure, index) => {
+        figure.getAnimations().forEach(animation => animation.cancel());
+        figure.animate([
+          {opacity: 0, transform: 'translate3d(0,18px,0) scale(.98)'},
+          {opacity: 1, transform: 'translate3d(0,0,0) scale(1)'}
+        ], {duration: 600, delay: index * 65, easing: 'cubic-bezier(.16,1,.3,1)', fill: 'backwards'});
+      });
     }
   }
   selectPath(location.hash.replace('#path-', ''));
@@ -119,7 +129,7 @@ if (pathButtons.length) {
   });
   pathButtons.forEach((button, index) => {
     button.addEventListener('click', () => {
-      selectPath(button.dataset.path);
+      selectPath(button.dataset.path, true);
       setFragment('#path-' + button.dataset.path, true);
     });
     button.addEventListener('keydown', event => {
