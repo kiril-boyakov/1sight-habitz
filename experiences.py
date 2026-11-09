@@ -37,17 +37,16 @@ CONTENT = {
 }
 
 def instant_gallery(kind, lang):
-    preferred = [photo for photo in GALLERY if kind in photo['kinds']]
-    others = [photo for photo in GALLERY if kind not in photo['kinds']]
+    photos = [photo for photo in GALLERY if kind == photo['kind']]
     title = 'Akimirkos iš HABITS' if lang == 'lt' else 'Moments at HABITS'
     previous = 'Ankstesnės nuotraukos' if lang == 'lt' else 'Previous photos'
     following = 'Kitos nuotraukos' if lang == 'lt' else 'Next photos'
     cards = []
-    for photo in preferred + others:
+    for photo in photos:
         caption = escape(photo[lang])
-        cards.append(f'''<a class="instant-photo" href="{escape(photo['url'])}" target="_blank" rel="noopener noreferrer" aria-label="{caption} · Instagram">
+        cards.append(f'''<a class="instant-photo" href="{escape(photo['url'])}" target="_blank" rel="noopener noreferrer" aria-label="{caption} · {escape(photo.get('sourceLabel', 'Instagram ↗'))}">
         <figure><img src="/assets/{photo['file']}" loading="lazy" width="{photo['width']}" height="{photo['height']}" alt="{caption}">
-        <figcaption><span>{caption}</span><small>Instagram ↗</small></figcaption></figure></a>''')
+        <figcaption><span>{caption}</span><small>{escape(photo.get('sourceLabel', 'Instagram ↗'))}</small></figcaption></figure></a>''')
     return f'''<div class="instant-gallery"><div class="gallery-toolbar"><p>{title}</p><div class="gallery-arrows">
         <button type="button" class="gallery-arrow" data-gallery-step="-1" aria-controls="wall-{kind}" aria-label="{previous}">←</button>
         <button type="button" class="gallery-arrow" data-gallery-step="1" aria-controls="wall-{kind}" aria-label="{following}">→</button>

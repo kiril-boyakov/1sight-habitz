@@ -264,3 +264,11 @@
 @media(hover:hover){.instant-photo:hover{z-index:10;transform:translateY(-12px) rotate(0deg) scale(1.035);box-shadow:0 16px 26px #33241c35}}
 @media(max-width:700px){.path-description{display:block}.path-description h3{max-width:14em}.path-description>p{margin:22px 0}.instant-gallery{margin-top:30px}.instant-wall{grid-auto-columns:210px;padding-top:30px;gap:20px 0}.gallery-toolbar p{font-size:18px}.path-nav button{font-size:11px}}
 @media(prefers-reduced-motion:reduce){.instant-photo{transition:none}.instant-photo:hover,.instant-photo:focus-visible{transform:rotate(0deg)}}
+
+.hero .eyebrow{font-size:clamp(18px,1.8vw,26px);letter-spacing:.12em}
+@media(max-width:600px){.hero .eyebrow{font-size:clamp(14px,3.7vw,18px);letter-spacing:.08em}}
+#cocktails .category-photo img{object-position:22% 20%}
+#drinks .category-photo{background:#fffdf7}
+#drinks .category-photo img{object-fit:contain}
+.instant-wall{justify-content:safe center}
+.gallery-arrow:disabled{opacity:.35;cursor:default}

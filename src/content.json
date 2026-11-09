@@ -87,7 +87,13 @@
     "clearSearch": "Išvalyti paiešką",
     "noResults": "Nieko neradome. Pabandykite kitą žodį.",
     "resultsCount": "Rasta patiekalų:",
-    "eventsNav": "Renginiai"
+    "eventsNav": "Renginiai",
+    "altMenu-breakfast": "Omega 3 pusryčiai su sardinėmis",
+    "altMenu-lunch": "Trigubas itališkos mėsos sumuštinis",
+    "altMenu-drinks": "ROY kombuča",
+    "altMenu-wine": "Vyno taurės HABITS restorane",
+    "altMenu-cocktails": "Kokteiliai ir patiekalai HABITS",
+    "altMenu-spirits": "HABITS baras ir gėrimų lentynos"
   },
   "en": {
     "menu": "Menu",
@@ -177,6 +183,12 @@
     "clearSearch": "Clear search",
     "noResults": "No dishes found. Try another word.",
     "resultsCount": "Dishes found:",
-    "eventsNav": "Events"
+    "eventsNav": "Events",
+    "altMenu-breakfast": "Omega 3 breakfast with sardines",
+    "altMenu-lunch": "Triple Italian meat sandwich",
+    "altMenu-drinks": "ROY kombucha",
+    "altMenu-wine": "Wine glasses at HABITS",
+    "altMenu-cocktails": "Cocktails and food at HABITS",
+    "altMenu-spirits": "The HABITS bar and bottles"
   }
 }

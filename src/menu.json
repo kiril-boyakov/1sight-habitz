@@ -5,7 +5,7 @@
       "id": "breakfast",
       "lt": "Pusryčiai ir pietūs",
       "en": "Brunch & bowls",
-      "image": "table",
+      "image": "menu-breakfast",
       "notes": {
         "lt": "Pagrindiniai patiekalai yra ir pirmadienio–ketvirtadienio, ir išplėstiniame meniu. Papildomi patiekalai pažymėti atskirai.",
         "en": "The selection below appears on both the Monday–Thursday and full menus. Additional full-menu dishes are listed separately."
@@ -275,7 +275,7 @@
       "id": "lunch",
       "lt": "Dienos pietūs",
       "en": "Weekday lunch",
-      "image": "table",
+      "image": "menu-lunch",
       "notes": {
         "lt": "11:00–14:00 · Sriuba 3,50 €. Dienos patiekalas 11 €. Patiekalas su sriuba 12 €.",
         "en": "11:00–14:00 · Soup €3.50. Main €11. Main with soup €12."
@@ -565,7 +565,7 @@
       "id": "drinks",
       "lt": "Gaivieji gėrimai ir alus",
       "en": "Soft drinks & beer",
-      "image": "terrace",
+      "image": "menu-drinks",
       "notes": {
         "lt": "",
         "en": ""
@@ -715,7 +715,7 @@
       "id": "wine",
       "lt": "Vyno korta",
       "en": "Wine list",
-      "image": "terrace",
+      "image": "menu-wine",
       "notes": {
         "lt": "Kur pateiktos dvi kainos – taurė / butelis.",
         "en": "Paired prices are per glass / bottle."
@@ -899,7 +899,7 @@
       "id": "spirits",
       "lt": "Stiprieji gėrimai",
       "en": "Spirits",
-      "image": "terrace",
+      "image": "menu-spirits",
       "notes": {
         "lt": "",
         "en": ""
@@ -1051,7 +1051,7 @@
       "id": "cocktails",
       "lt": "Kokteiliai",
       "en": "Cocktails",
-      "image": "terrace",
+      "image": "menu-cocktails",
       "notes": {
         "lt": "",
         "en": ""

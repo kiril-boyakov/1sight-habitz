@@ -142,5 +142,100 @@
         "height": 1707
       }
     ]
+  },
+  "menu-breakfast": {
+    "width": 1162,
+    "height": 1200,
+    "variants": [
+      {
+        "file": "menu-breakfast.webp",
+        "width": 1162,
+        "height": 1200
+      }
+    ],
+    "alt": {
+      "lt": "Omega 3 pusryčiai su sardinėmis",
+      "en": "Omega 3 breakfast with sardines"
+    }
+  },
+  "menu-lunch": {
+    "width": 600,
+    "height": 338,
+    "variants": [
+      {
+        "file": "menu-lunch.webp",
+        "width": 600,
+        "height": 338
+      }
+    ],
+    "alt": {
+      "lt": "Trigubas itališkos mėsos sumuštinis",
+      "en": "Triple Italian meat sandwich"
+    }
+  },
+  "menu-drinks": {
+    "width": 600,
+    "height": 338,
+    "variants": [
+      {
+        "file": "menu-drinks.webp",
+        "width": 600,
+        "height": 338
+      }
+    ],
+    "alt": {
+      "lt": "ROY kombuča",
+      "en": "ROY kombucha"
+    }
+  },
+  "menu-wine": {
+    "width": 800,
+    "height": 800,
+    "variants": [
+      {
+        "file": "menu-wine.webp",
+        "width": 800,
+        "height": 800
+      }
+    ],
+    "alt": {
+      "lt": "Vyno taurės HABITS restorane",
+      "en": "Wine glasses at HABITS"
+    }
+  },
+  "menu-cocktails": {
+    "width": 800,
+    "height": 800,
+    "variants": [
+      {
+        "file": "menu-cocktails.webp",
+        "width": 800,
+        "height": 800
+      }
+    ],
+    "alt": {
+      "lt": "Kokteiliai ir patiekalai HABITS",
+      "en": "Cocktails and food at HABITS"
+    }
+  },
+  "menu-spirits": {
+    "width": 2268,
+    "height": 3024,
+    "variants": [
+      {
+        "file": "evening-640.webp",
+        "width": 640,
+        "height": 853
+      },
+      {
+        "file": "evening-1280.webp",
+        "width": 1280,
+        "height": 1707
+      }
+    ],
+    "alt": {
+      "lt": "HABITS baras ir gėrimų lentynos",
+      "en": "The HABITS bar and bottles"
+    }
   }
 }

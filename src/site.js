@@ -18,21 +18,27 @@ if('IntersectionObserver'in window&&!reduced.matches){
 }
 const hero=document.querySelector('.hero');
 const film=document.querySelector('.hero-film');
-const filmToggle=document.querySelector('.video-toggle');
-if(hero&&film&&filmToggle){
- film.muted=true;film.defaultMuted=true;
- let userPaused=false;let heroVisible=true;
- const icon=(playing)=>{filmToggle.classList.toggle('is-paused',!playing);filmToggle.setAttribute('aria-pressed',String(playing));filmToggle.setAttribute('aria-label',playing?filmToggle.dataset.pause:filmToggle.dataset.play)};
- const play=async()=>{if(!film.getAttribute('src'))film.src=film.dataset.src;try{await film.play()}catch{hero.classList.remove('has-video');icon(false)}};
- film.addEventListener('playing',()=>{hero.classList.add('has-video');icon(true)});
- film.addEventListener('pause',()=>icon(false));
- film.addEventListener('error',()=>{hero.classList.remove('has-video');icon(false)});
- filmToggle.addEventListener('click',()=>{userPaused=!film.paused;if(film.paused)play();else film.pause()});
- const preference=()=>{filmToggle.hidden=reduced.matches;if(reduced.matches){film.pause();hero.classList.remove('has-video')}else if(!navigator.connection?.saveData)play()};
- reduced.addEventListener?.('change',preference);
- document.addEventListener('visibilitychange',()=>{if(document.hidden)film.pause();else if(heroVisible&&!userPaused&&!reduced.matches)play()});
- preference();
- if('IntersectionObserver'in window)new IntersectionObserver(([entry])=>{heroVisible=entry.isIntersecting;if(!heroVisible)film.pause();else if(!document.hidden&&!userPaused&&!reduced.matches)play()},{threshold:0}).observe(hero);
+if (hero && film) {
+ film.muted = true;
+ film.defaultMuted = true;
+ let heroVisible = true;
+ const play = async () => {
+  if (!film.getAttribute('src')) film.src = film.dataset.src;
+  try { await film.play(); } catch { hero.classList.remove('has-video'); }
+ };
+ film.addEventListener('playing', () => hero.classList.add('has-video'));
+ film.addEventListener('error', () => hero.classList.remove('has-video'));
+ const updatePlayback = () => {
+  if (document.hidden || !heroVisible || reduced.matches || navigator.connection?.saveData) film.pause();
+  else play();
+ };
+ reduced.addEventListener?.('change', updatePlayback);
+ document.addEventListener('visibilitychange', updatePlayback);
+ if ('IntersectionObserver' in window) new IntersectionObserver(([entry]) => {
+  heroVisible = entry.isIntersecting;
+  updatePlayback();
+ }, {threshold: 0}).observe(hero);
+ updatePlayback();
 }
 const mobileActions=document.querySelector('.mobile-actions');
 if(hero&&mobileActions&&'IntersectionObserver'in window)new IntersectionObserver(([e])=>mobileActions.classList.toggle('hidden',e.isIntersecting),{threshold:.15}).observe(hero);
@@ -132,6 +138,15 @@ if (pathButtons.length) {
 
 for (const gallery of document.querySelectorAll('.instant-gallery')) {
   const wall = gallery.querySelector('.instant-wall');
+  const updateControls = () => {
+    if (!wall.clientWidth) return;
+    gallery.querySelector('.gallery-arrows').hidden = wall.scrollWidth <= wall.clientWidth + 2;
+    gallery.querySelector('[data-gallery-step="-1"]').disabled = wall.scrollLeft <= 1;
+    gallery.querySelector('[data-gallery-step="1"]').disabled = wall.scrollLeft + wall.clientWidth >= wall.scrollWidth - 1;
+  };
+  wall.addEventListener('scroll', updateControls, {passive: true});
+  if ('ResizeObserver' in window) new ResizeObserver(updateControls).observe(wall);
+  updateControls();
   const scrollWall = direction => wall.scrollBy({
     left: direction * Math.max(230, wall.clientWidth * .75),
     behavior: reduced.matches ? 'instant' : 'smooth'

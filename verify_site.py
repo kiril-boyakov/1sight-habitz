@@ -2,7 +2,7 @@
 from pathlib import Path
 from html.parser import HTMLParser
 from urllib.parse import urlsplit,unquote
-import json
+import json, hashlib
 ROOT=Path(__file__).resolve().parent
 DIST=ROOT/'dist'
 class Document(HTMLParser):
@@ -38,4 +38,12 @@ for page,doc in docs.items():
   if not any(t=='link' and a.get('rel')==name for t,a in doc.tags):fail.append(f'{page}: missing {name}')
 assert len(docs)==6,len(docs)
 assert not fail,'\n'.join(fail)
+gallery=json.loads((ROOT/'src/gallery.json').read_text())
+assert {photo['kind'] for photo in gallery}=={'collab','corporate','bakery','celebration'}
+assert len({photo['file'] for photo in gallery})==len(gallery), 'Gallery filenames repeat'
+digests=[hashlib.sha256((DIST/'assets'/photo['file']).read_bytes()).hexdigest() for photo in gallery]
+assert len(set(digests))==len(digests), 'Gallery photographs repeat'
+image_data=json.loads((ROOT/'src/images.json').read_text())
+category_images=[image_data[category['image']]['variants'][-1]['file'] for category in menu['categories']]
+assert len(set(category_images))==len(category_images), 'Menu category photographs repeat'
 print(f'PASS: six pages, {menu_count} menu items per language, localized booking links, anchors, alt text, metadata and responsive assets.')
