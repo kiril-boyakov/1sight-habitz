@@ -41,15 +41,17 @@ def instant_gallery(kind, lang):
     title = 'Akimirkos iš HABITS' if lang == 'lt' else 'Moments at HABITS'
     previous = 'Ankstesnės nuotraukos' if lang == 'lt' else 'Previous photos'
     following = 'Kitos nuotraukos' if lang == 'lt' else 'Next photos'
+    previous_label = 'Atgal' if lang == 'lt' else 'Previous'
+    next_label = 'Toliau' if lang == 'lt' else 'Next'
     cards = []
     for photo in photos:
         caption = escape(photo[lang])
-        cards.append(f'''<a class="instant-photo" href="{escape(photo['url'])}" target="_blank" rel="noopener noreferrer" aria-label="{caption} · {escape(photo.get('sourceLabel', 'Instagram ↗'))}">
+        cards.append(f'''<a class="instant-photo" href="{escape(photo['url'])}" target="_blank" rel="noopener noreferrer" aria-label="{caption} · {escape(photo.get('sourceLabel', 'Instagram'))}">
         <figure><img src="/assets/{photo['file']}" loading="lazy" width="{photo['width']}" height="{photo['height']}" alt="{caption}">
-        <figcaption><span>{caption}</span><small>{escape(photo.get('sourceLabel', 'Instagram ↗'))}</small></figcaption></figure></a>''')
+        <figcaption><span>{caption}</span><small>{escape(photo.get('sourceLabel', 'Instagram'))}</small></figcaption></figure></a>''')
     return f'''<div class="instant-gallery"><div class="gallery-toolbar"><p>{title}</p><div class="gallery-arrows">
-        <button type="button" class="gallery-arrow" data-gallery-step="-1" aria-controls="wall-{kind}" aria-label="{previous}">←</button>
-        <button type="button" class="gallery-arrow" data-gallery-step="1" aria-controls="wall-{kind}" aria-label="{following}">→</button>
+        <button type="button" class="gallery-arrow" data-gallery-step="-1" aria-controls="wall-{kind}" aria-label="{previous}">{previous_label}</button>
+        <button type="button" class="gallery-arrow" data-gallery-step="1" aria-controls="wall-{kind}" aria-label="{following}">{next_label}</button>
         </div></div><div class="instant-wall" id="wall-{kind}" role="region" tabindex="0" aria-label="{title}">{''.join(cards)}</div></div>'''
 
 
@@ -59,6 +61,6 @@ def experiences(lang, picture, labels):
     panels = []
     for key, label, title, description in copy['paths']:
         panels.append(f'''<article class="path-panel" role="tabpanel" aria-labelledby="tab-{key}" id="path-{key}"><div class="path-description"><h3>{title}</h3><p>{description}</p>
-        <a class="button primary" data-inquiry-kind="{key}" href="#inquiry">{copy['cta']} ↗</a></div>{instant_gallery(key, lang)}</article>''')
+        <a class="button primary" data-inquiry-kind="{key}" href="#inquiry">{copy['cta']}</a></div>{instant_gallery(key, lang)}</article>''')
     return f'''<section id="together" class="together"><header class="archive-heading scene-large" data-drift="24">{picture('event-banner',labels['altEvent-banner'])}<div><p class="eyebrow">{copy['label']}</p><h2>{copy['title']}</h2></div></header>
     <div class="path-nav" role="tablist" aria-label="{copy['categories']}">{nav}</div>{''.join(panels)}</section>'''
