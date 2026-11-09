@@ -9,6 +9,8 @@ class Document(HTMLParser):
  def __init__(self,text):
   super().__init__();self.tags=[];self.feed(text)
  def handle_starttag(self,name,attrs):self.tags.append((name,dict(attrs)))
+menu=json.loads((ROOT/"src/menu.json").read_text())
+menu_count=sum(len(group["items"]) for cat in menu["categories"] for group in cat["groups"])
 docs={p:Document(p.read_text()) for p in DIST.rglob('index.html')}
 fail=[]
 for page,doc in docs.items():
@@ -31,9 +33,9 @@ for page,doc in docs.items():
     target=Document(path.read_text())
     if unquote(url.fragment) not in [x.get('id') for _,x in target.tags]:fail.append(f'{page}: missing anchor {ref}')
   if tag=='a' and 'habits.tablein.com' in a.get('href','') and a['href']!='https://habits.tablein.com/'+locale:fail.append(f'{page}: booking language')
- if 'menu' in page.relative_to(DIST).parts and sum(t=='article' and a.get('class')=='dish' for t,a in doc.tags)!=37:fail.append(f'{page}: menu count')
+ if 'menu' in page.relative_to(DIST).parts and sum(t=='article' and a.get('class')=='dish' for t,a in doc.tags)!=menu_count:fail.append(f'{page}: menu count')
  for name in ['canonical','alternate']:
   if not any(t=='link' and a.get('rel')==name for t,a in doc.tags):fail.append(f'{page}: missing {name}')
 assert len(docs)==6,len(docs)
 assert not fail,'\n'.join(fail)
-print('PASS: six pages, 37 menu items per language, localized booking links, anchors, alt text, metadata and responsive assets.')
+print(f'PASS: six pages, {menu_count} menu items per language, localized booking links, anchors, alt text, metadata and responsive assets.')

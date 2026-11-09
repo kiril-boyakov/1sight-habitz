@@ -9,11 +9,6 @@
         "height": 791
       },
       {
-        "file": "sandwich-1080.webp",
-        "width": 1080,
-        "height": 1334
-      },
-      {
         "file": "sandwich-1088.webp",
         "width": 1088,
         "height": 1344
@@ -30,34 +25,9 @@
         "height": 853
       },
       {
-        "file": "coffee-1080.webp",
-        "width": 1080,
-        "height": 1440
-      },
-      {
         "file": "coffee-1280.webp",
         "width": 1280,
         "height": 1707
-      },
-      {
-        "file": "coffee-1600.webp",
-        "width": 1600,
-        "height": 2133
-      },
-      {
-        "file": "coffee-1920.webp",
-        "width": 1920,
-        "height": 2560
-      },
-      {
-        "file": "coffee-2560.webp",
-        "width": 2560,
-        "height": 3413
-      },
-      {
-        "file": "coffee-3072.webp",
-        "width": 3072,
-        "height": 4096
       }
     ]
   },
@@ -71,34 +41,9 @@
         "height": 853
       },
       {
-        "file": "interior-1080.webp",
-        "width": 1080,
-        "height": 1440
-      },
-      {
         "file": "interior-1280.webp",
         "width": 1280,
         "height": 1706
-      },
-      {
-        "file": "interior-1600.webp",
-        "width": 1600,
-        "height": 2133
-      },
-      {
-        "file": "interior-1920.webp",
-        "width": 1920,
-        "height": 2560
-      },
-      {
-        "file": "interior-2560.webp",
-        "width": 2560,
-        "height": 3413
-      },
-      {
-        "file": "interior-2867.webp",
-        "width": 2867,
-        "height": 3822
       }
     ]
   },
@@ -144,34 +89,9 @@
         "height": 853
       },
       {
-        "file": "venue-1080.webp",
-        "width": 1080,
-        "height": 1440
-      },
-      {
         "file": "venue-1280.webp",
         "width": 1280,
         "height": 1707
-      },
-      {
-        "file": "venue-1600.webp",
-        "width": 1600,
-        "height": 2133
-      },
-      {
-        "file": "venue-1920.webp",
-        "width": 1920,
-        "height": 2560
-      },
-      {
-        "file": "venue-2560.webp",
-        "width": 2560,
-        "height": 3413
-      },
-      {
-        "file": "venue-3024.webp",
-        "width": 3024,
-        "height": 4032
       }
     ]
   },
@@ -185,29 +105,9 @@
         "height": 853
       },
       {
-        "file": "evening-1080.webp",
-        "width": 1080,
-        "height": 1440
-      },
-      {
         "file": "evening-1280.webp",
         "width": 1280,
         "height": 1707
-      },
-      {
-        "file": "evening-1600.webp",
-        "width": 1600,
-        "height": 2133
-      },
-      {
-        "file": "evening-1920.webp",
-        "width": 1920,
-        "height": 2560
-      },
-      {
-        "file": "evening-2268.webp",
-        "width": 2268,
-        "height": 3024
       }
     ]
   },
@@ -221,34 +121,9 @@
         "height": 853
       },
       {
-        "file": "terrace-1080.webp",
-        "width": 1080,
-        "height": 1440
-      },
-      {
         "file": "terrace-1280.webp",
         "width": 1280,
         "height": 1707
-      },
-      {
-        "file": "terrace-1600.webp",
-        "width": 1600,
-        "height": 2133
-      },
-      {
-        "file": "terrace-1920.webp",
-        "width": 1920,
-        "height": 2560
-      },
-      {
-        "file": "terrace-2560.webp",
-        "width": 2560,
-        "height": 3413
-      },
-      {
-        "file": "terrace-3024.webp",
-        "width": 3024,
-        "height": 4032
       }
     ]
   },
@@ -262,29 +137,9 @@
         "height": 853
       },
       {
-        "file": "table-1080.webp",
-        "width": 1080,
-        "height": 1440
-      },
-      {
         "file": "table-1280.webp",
         "width": 1280,
         "height": 1707
-      },
-      {
-        "file": "table-1600.webp",
-        "width": 1600,
-        "height": 2133
-      },
-      {
-        "file": "table-1920.webp",
-        "width": 1920,
-        "height": 2560
-      },
-      {
-        "file": "table-2058.webp",
-        "width": 2058,
-        "height": 2744
       }
     ]
   }

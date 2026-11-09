@@ -1,56 +1,1152 @@
 {
-  "source": "https://wolt.com/lt/ltu/vilnius/restaurant/habits-aukstaiciu-g",
-  "checked": "2026-11-08",
-  "priceType": "delivery-reference",
+  "priceType": "dine-in",
   "categories": [
-    {"id":"breakfast","lt":"Pusryčiai","en":"Breakfast","image":"table","items":[
-      ["Kepti grikiai su tunu","Buckwheat with tuna","Grikiai, kiaušinis, tunas, artišokai, portobello, majonezas, avokadas, čili aliejus. Su jogurtinėmis salotomis.","Buckwheat, egg, tuna, artichokes, portobello, mayonnaise, avocado, chilli oil. With yoghurt salad.",15.8],
-      ["Avokado skrebutis","Avocado toast","Raugo duona su sėklomis, avokadas, pomidorų užtepėlė, pomidorų salsa su ančiuviais, lazdynų riešutai, čili aliejus, mikrožalumynai.","Seeded sourdough, avocado, tomato spread, tomato and anchovy salsa, hazelnuts, chilli oil, microgreens.",12.8],
-      ["Šakšuka","Shakshuka","Pomidorų ir prieskonių troškinys, du kiaušiniai, Jeruzalės beigelis, žolelės, čili aliejus.","Spiced tomatoes, two eggs, Jerusalem bagel, herbs, chilli oil.",13.8],
-      ["Šakšuka su burrata (be kiaušinių)","Shakshuka with burrata (without eggs)","Pomidorai, prieskoniai, burrata, focaccia, pesto, trumų aliejus, žolelės, čili aliejus.","Tomatoes, spices, burrata, focaccia, pesto, truffle oil, herbs, chilli oil.",15.3],
-      ["Tuno tataki salotos","Tuna tataki salad","Geltonpelekis tunas, žirnių ankštys, edamame, brokoliai, radicchio, sezamai, ponzu, majonezas.","Yellowfin tuna, pea pods, edamame, broccoli, radicchio, sesame, ponzu, mayonnaise.",15],
-      ["Nourish dubenėlis su lašiša","Nourish salmon bowl","Lašiša, laukiniai ryžiai, saldžiosios bulvės, topinambai, ponzu, kiaušinis, majonezas, pankolis.","Salmon, wild rice, sweet potato, Jerusalem artichokes, ponzu, egg, mayonnaise, fennel.",16.5],
-      ["Vaikiškas keptas sumuštinis su kumpiu ir sūriu","Children’s toasted ham and cheese sandwich","Focaccia, pistacijų mortadela, mocarela, bulvytės fri, majonezas.","Focaccia, pistachio mortadella, mozzarella, fries, mayonnaise.",10],
-      ["Coco Berry Crunch","Coco Berry Crunch","Granola, graikiškas jogurtas, kokosų puta, braškės, avietės, rabarbarų tyrė, marinuoti rabarbarai.","Granola, Greek yoghurt, coconut foam, strawberries, raspberries, rhubarb purée, pickled rhubarb.",12.3]
-    ]},
-    {"id":"sandwiches","lt":"Sumuštiniai","en":"Sandwiches","image":"sandwich","items":[
-      ["Habits Club sumuštinis","Habits Club sandwich","Sluoksniuota bandelė, čederis, kiaušinių salotos, šoninė, pomidorai, romaninės salotos, kalakutiena.","Laminated bun, cheddar, egg salad, bacon, tomatoes, romaine, turkey.",15.8],
-      ["Trigubas itališkos mėsos sumuštinis","Triple Italian meat sandwich","Raugo duona su sėklomis, prosciutto cotto, coppa, mortadella, pesto, grąžgarstės, pomidorai, parmezanas, marinuoti svogūnai.","Seeded sourdough, prosciutto cotto, coppa, mortadella, pesto, rocket, tomatoes, Parmesan, pickled onions.",15.8],
-      ["The Pastrami","The Pastrami","Focaccia, pastrami, agurkai, ančiuvių majonezas, marinuoti svogūnai, grąžgarstės, radicchio.","Focaccia, pastrami, cucumber, anchovy mayonnaise, pickled onions, rocket, radicchio.",17.8]
-    ]},
-    {"id":"eggs","lt":"Kiaušiniai","en":"Eggs","image":"table","items":[
-      ["Milijonieriaus kiaušinienė","Millionaire’s eggs","Kepti kiaušiniai, majonezas, krevetės, žolelės, kruasanas. Su agurkų, pomidorų, svogūnų, pankolio, baziliko ir lazdynų riešutų salotomis, čili bei citrinų aliejumi.","Fried eggs, mayonnaise, prawns, herbs, croissant. With cucumber, tomato, onion, fennel, basil and hazelnut salad, chilli and lemon oils.",14.3],
-      ["Turkiški kiaušiniai","Turkish eggs","Jogurtas, paprikų padažas, keptos morkos, du kiaušiniai, Jeruzalės beigelis, žolelės, čili aliejus. Su ridikėlių, pankolio ir cukinijų salotomis, citrinų aliejumi bei baziliku.","Yoghurt, pepper sauce, roasted carrots, two eggs, Jerusalem bagel, herbs, chilli oil. With radish, fennel and courgette salad, lemon oil and basil.",14.3],
-      ["Plakta kiaušinienė","Scrambled eggs","Kiaušiniai, rikota, raugo duona su sėklomis, parmezanas, čili aliejus, pomidorų padažas, mikrožalumynai.","Eggs, ricotta, seeded sourdough, Parmesan, chilli oil, tomato sauce, microgreens.",12.3]
-    ]},
-    {"id":"sides","lt":"Priedai","en":"Sides","image":"terrace","items":[
-      ["Milijonieriaus salotos","Millionaire’s salad","Agurkai, pomidorai, svogūnai, pankolis, bazilikas, lazdynų riešutai, čili ir citrinų aliejai.","Cucumber, tomatoes, onion, fennel, basil, hazelnuts, chilli and lemon oils.",4.3],
-      ["Cukinijų salotos","Courgette salad","Ridikėliai, marinuoti pankoliai, cukinijos, citrinų aliejus, bazilikas.","Radishes, pickled fennel, courgette, lemon oil, basil.",4.3],
-      ["Jogurtinės salotos","Yoghurt salad","Jogurtas, agurkai, pomidorai, marinuoti svogūnai, peperoni pipiras, juodieji sezamai.","Yoghurt, cucumber, tomatoes, pickled onion, peperoni pepper, black sesame.",4.3]
-    ]},
-    {"id":"bakes","lt":"Bandelės","en":"Bakes","image":"pastry","items":[
-      ["Migdolai / žemės riešutai kruasanas","Almond / peanut croissant","Sluoksniuota tešla, migdolų ir žemės riešutų įdaras.","Laminated pastry with almond and peanut filling.",5.4],
-      ["Cinamoninė","Cinnamon bun","Sluoksniuotos tešlos bandelė su cinamonu.","Laminated bun with cinnamon.",3.5],
-      ["Marcipaninė","Marzipan bun","Sluoksniuota tešla su marcipano įdaru.","Laminated pastry with marzipan filling.",4.8],
-      ["Braškė / maskarponė","Strawberry / mascarpone","Sluoksniuota tešla, braškės ir maskarponė.","Laminated pastry, strawberries and mascarpone.",5.3],
-      ["Kinder Bueno","Kinder Bueno","Sluoksniuota tešla su lazdyno riešutų kremu.","Laminated pastry with hazelnut cream.",5.7],
-      ["Pistacijų NY","Pistachio NY","Sluoksniuota tešla su pistacijų kremu.","Laminated pastry with pistachio cream.",5.5],
-      ["Obuoliai","Apple bun","Sluoksniuota tešla su obuolių įdaru.","Laminated pastry with apple filling.",4.3],
-      ["Lotus","Lotus","Sluoksniuota tešla su karamelinių sausainių kremu.","Laminated pastry with caramelised biscuit cream.",5]
-    ]},
-    {"id":"drinks","lt":"Gėrimai","en":"Drinks","image":"coffee","items":[
-      ["Kombucha ROY · 330 ml","Kombucha ROY · 330 ml","","",5],
-      ["Sultys Rauch · 200 ml","Rauch juice · 200 ml","","",3.2],
-      ["Fanta · 250 ml","Fanta · 250 ml","","",3.2],
-      ["Coca-Cola Zero · 250 ml","Coca-Cola Zero · 250 ml","","",3.2],
-      ["Coca-Cola · 250 ml","Coca-Cola · 250 ml","","",3.2],
-      ["Sprite · 250 ml","Sprite · 250 ml","","",3.2],
-      ["Šviežiai spaustos sultys · 250 ml","Freshly squeezed juice · 250 ml","","",6.2],
-      ["Vittel negazuotas vanduo · 750 ml","Vittel still water · 750 ml","","",5.5],
-      ["Paloma limonadas","Paloma lemonade","","",5],
-      ["Red Bull · 250 ml","Red Bull · 250 ml","","",4.5],
-      ["Red Bull Sugarfree · 250 ml","Red Bull Sugarfree · 250 ml","","",4.5],
-      ["J. Gasco Indian tonikas","J. Gasco Indian tonic","","",5]
-    ]}
+    {
+      "id": "breakfast",
+      "lt": "Pusryčiai ir pietūs",
+      "en": "Brunch & bowls",
+      "image": "table",
+      "notes": {
+        "lt": "Pagrindiniai patiekalai yra ir pirmadienio–ketvirtadienio, ir išplėstiniame meniu. Papildomi patiekalai pažymėti atskirai.",
+        "en": "The selection below appears on both the Monday–Thursday and full menus. Additional full-menu dishes are listed separately."
+      },
+      "groups": [
+        {
+          "lt": "",
+          "en": "",
+          "items": [
+            [
+              "Omega 3 pusryčiai",
+              "Omega 3 breakfast",
+              "Itališkos sardinės, sūdyta lašiša, virtas kiaušinis, plaktas sviestas, sourdough duona, lazdyno riešutai, romaninė salota, citrinų aliejus, parmezanas.",
+              "Italian sardines, cured salmon, boiled egg, whipped butter, sourdough, hazelnuts, romaine, lemon oil and Parmesan.",
+              17
+            ],
+            [
+              "Coco Berry Crunch",
+              "Coco Berry Crunch",
+              "Granola, graikiškas jogurtas, kokosų puta, braškės, avietės, rabarbarų tyrė, marinuoti rabarbarai.",
+              "Granola, Greek yoghurt, coconut foam, strawberries, raspberries, rhubarb purée and pickled rhubarb.",
+              11
+            ],
+            [
+              "Tuna tataki salotos",
+              "Tuna tataki salad",
+              "Geltonpelekio tuno filė, žirnių ankštys, edamame, brokoliai, radicchio salotos, ančiuvių majonezas, citrinų aliejus, sumak prieskoniai, kiaušinis.",
+              "Yellowfin tuna fillet, pea pods, edamame, broccoli, radicchio, anchovy mayonnaise, lemon oil, sumac and egg.",
+              13.5
+            ],
+            [
+              "Nourish dubenėlis su lašiša",
+              "Nourish salmon bowl",
+              "Kepta lašiša, ryžiai, keptos saldžiosios bulvės, karamelizuoti topinambai, ponzu padažas, kiaušinis, naminis majonezas, pankoliai, citrinų aliejus.",
+              "Roasted salmon, rice, roasted sweet potatoes, caramelised Jerusalem artichokes, ponzu, egg, house mayonnaise, fennel and lemon oil.",
+              14.5
+            ],
+            [
+              "Kepti grikiai su tunu",
+              "Fried buckwheat with tuna",
+              "Grikiai, pusiau virtas kiaušinis, tunas, artišokai, kepti portobello grybai, naminis majonezas, avokadas, čili aliejus, agurkai, pomidorai, marinuoti svogūnai, pipirai, juodieji sezamai.",
+              "Buckwheat, soft-boiled egg, tuna, artichokes, roasted portobello mushrooms, house mayonnaise, avocado, chilli oil, cucumbers, tomatoes, pickled onions, pepper and black sesame.",
+              14
+            ],
+            [
+              "Benediktai",
+              "Eggs Benedict",
+              "Sluoksniuotos tešlos bandelė, špinatai, olandiškas padažas, kiaušiniai. Pirmadieniais–ketvirtadieniais su čili aioli, kitame meniu su čili aliejumi. Pasirinkimai: mortadella, avokadas arba sūdyta lašiša. Krevetės +2 €, pančeta +2 €.",
+              "Flaky pastry bun, spinach, hollandaise and eggs. With chilli aioli on the Monday–Thursday menu and chilli oil on the full menu. Choose mortadella, avocado or cured salmon. Prawns +€2, pancetta +€2.",
+              12
+            ],
+            [
+              "Šakšuka",
+              "Shakshuka",
+              "Pomidorų, raudonųjų paprikų ir prieskonių troškinys, kiaušiniai, jalapenai, traškūs avinžirniai, Jeruzalės beigelis, žolelės, čili aliejus. Peperoni +2 €.",
+              "Tomato, red pepper and spice stew, eggs, jalapeños, crispy chickpeas, Jerusalem bagel, herbs and chilli oil. Pepperoni +€2.",
+              12.5
+            ],
+            [
+              "Šakšuka su burrata (be kiaušinių)",
+              "Burrata shakshuka (without eggs)",
+              "Pomidorų, raudonųjų paprikų ir prieskonių troškinys, burrata, focaccia, pesto, trumų aliejus, žolelės, čili aliejus, sezamų sėklos. Kiaušinis marškinėliuose +1 €.",
+              "Tomato, red pepper and spice stew, burrata, focaccia, pesto, truffle oil, herbs, chilli oil and sesame seeds. Poached egg +€1.",
+              13.5
+            ]
+          ]
+        },
+        {
+          "lt": "Išplėstinis meniu",
+          "en": "Full menu additions",
+          "items": [
+            [
+              "Kepti varškėčiai",
+              "Cottage cheese pancakes",
+              "Mėlynių uogienė, labneh jogurtas, cukraus pudra. Gaminimas gali užtrukti šiek tiek ilgiau.",
+              "Blueberry jam, labneh yoghurt and icing sugar. Please allow a little extra preparation time.",
+              11
+            ],
+            [
+              "Milijonieriaus kiaušinienė",
+              "Millionaire’s eggs",
+              "Kepti kiaušiniai, naminis majonezas, krevetės, kruasanas. Salotos: agurkas, pomidoras, svogūnas, pankolis, lazdyno riešutai, čili aliejus, citrininis aliejus. Nduja +2 €, pančeta +2 €.",
+              "Fried eggs, house mayonnaise, prawns and a croissant. Served with cucumber, tomato, onion, fennel and hazelnut salad with chilli and lemon oils. Nduja +€2, pancetta +€2.",
+              12.5
+            ],
+            [
+              "Turkiški kiaušiniai",
+              "Turkish eggs",
+              "Jogurtas, keptų paprikų padažas, keptos morkos, kiaušiniai, Jeruzalės beigelis, žolelės, čili aliejus, ridikėliai, marinuoti pankoliai, bazilikas. Nduja +2 €.",
+              "Yoghurt, roasted pepper sauce, roasted carrots, eggs, Jerusalem bagel, herbs, chilli oil, radishes, pickled fennel and basil. Nduja +€2.",
+              12.5
+            ],
+            [
+              "Plakta kiaušinienė",
+              "Scrambled eggs",
+              "Rikota, natūralaus raugo duona su sėklomis, parmezano sūris, čili aliejus, naminis pomidorų padažas. Sūdyta lašiša, mortadella, avokadas arba pančeta po +2 €. Tik kiaušinių baltymai +2 €.",
+              "Ricotta, seeded sourdough, Parmesan, chilli oil and house tomato sauce. Cured salmon, mortadella, avocado or pancetta +€2 each. Egg whites only +€2.",
+              11
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sandwiches",
+      "lt": "Sumuštiniai ir burgeriai",
+      "en": "Sandwiches & burgers",
+      "image": "sandwich",
+      "notes": {
+        "lt": "Trys naujienos – abiejuose meniu. Žemiau – išplėstinio meniu sumuštiniai ir priedai.",
+        "en": "The three new additions appear on both menus. The full menu also includes the sandwiches and extras below."
+      },
+      "groups": [
+        {
+          "lt": "Naujienos",
+          "en": "New additions",
+          "items": [
+            [
+              "Habits Cheeseburger",
+              "Habits Cheeseburger",
+              "Sluoksniuotos tešlos bandelė, jautienos paplotėlis, čederis, agurkėliai, burgerio padažas, bulvytės.",
+              "Flaky pastry bun, beef patty, cheddar, pickles, burger sauce and fries.",
+              15
+            ],
+            [
+              "Chicken Katsu",
+              "Chicken Katsu",
+              "Sourdough duona, panko vištiena, iceberg salotos, kimchi aioli, pomidorai.",
+              "Sourdough, panko chicken, iceberg lettuce, kimchi aioli and tomatoes.",
+              [
+                8,
+                13.5
+              ]
+            ],
+            [
+              "The Pastrami",
+              "The Pastrami",
+              "Beigelio bandelė, pastrami, kimchi aioli, svogūnai, agurkai, jalapenai, čederio sūris.",
+              "Bagel, pastrami, kimchi aioli, onions, cucumbers, jalapeños and cheddar.",
+              16
+            ]
+          ]
+        },
+        {
+          "lt": "Išplėstinis meniu",
+          "en": "Full menu additions",
+          "items": [
+            [
+              "Vaikiškas keptas sumuštinis su kumpiu ir sūriu",
+              "Children’s toasted ham and cheese sandwich",
+              "Focaccia, kalakutienos kumpis, mocarela, bulvytės fri, agurkas, naminis majonezas.",
+              "Focaccia, turkey ham, mozzarella, fries, cucumber and house mayonnaise.",
+              9
+            ],
+            [
+              "Habits Club",
+              "Habits Club",
+              "Sluoksniuotos tešlos bandelė, kiaušinių salotos, šoninė, pomidoras, čederis, kalakutienos kumpis, romaninė salota.",
+              "Flaky pastry bun, egg salad, bacon, tomato, cheddar, turkey ham and romaine.",
+              14
+            ],
+            [
+              "Trigubas itališkos mėsos sumuštinis",
+              "Triple Italian meat sandwich",
+              "Natūralaus raugo duona su sėklomis, prosciutto cotto kumpis, coppa kumpis, mortadella dešra, pesto, gražgarstės, pomidorai, parmezanas, marinuoti svogūnai.",
+              "Seeded sourdough, prosciutto cotto, coppa, mortadella, pesto, rocket, tomatoes, Parmesan and pickled onions.",
+              [
+                9,
+                14
+              ]
+            ],
+            [
+              "Avokado skrebutis (VE)",
+              "Avocado toast (VE)",
+              "Natūralaus raugo duona su sėklomis, avokadas, itališkų pomidorų užtepėlė, bazilikas, petražolė, krapai, mėta, granatai. Kiaušinis marškinėliuose +1 €, mortadella +2 €, sūdyta lašiša +2 €.",
+              "Seeded sourdough, avocado, Italian tomato spread, basil, parsley, dill, mint and pomegranate. Poached egg +€1, mortadella +€2, cured salmon +€2.",
+              11.5
+            ]
+          ]
+        },
+        {
+          "lt": "Priedai",
+          "en": "Extras",
+          "items": [
+            [
+              "Papildomas kiaušinis",
+              "Extra egg",
+              "",
+              "",
+              1
+            ],
+            [
+              "Duonelė",
+              "Bread",
+              "",
+              "",
+              1
+            ],
+            [
+              "Sūdyta lašiša",
+              "Cured salmon",
+              "",
+              "",
+              2
+            ],
+            [
+              "Mortadella",
+              "Mortadella",
+              "",
+              "",
+              2
+            ],
+            [
+              "Avokadas",
+              "Avocado",
+              "",
+              "",
+              2
+            ],
+            [
+              "Pančeta",
+              "Pancetta",
+              "",
+              "",
+              2
+            ],
+            [
+              "Nduja",
+              "Nduja",
+              "",
+              "",
+              2
+            ],
+            [
+              "Peperoni",
+              "Pepperoni",
+              "",
+              "",
+              2
+            ],
+            [
+              "Krevetės",
+              "Prawns",
+              "",
+              "",
+              4
+            ],
+            [
+              "Jogurtinės salotos",
+              "Yoghurt salad",
+              "",
+              "",
+              3.5
+            ],
+            [
+              "Cukinijų salotos",
+              "Courgette salad",
+              "",
+              "",
+              3.5
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lunch",
+      "lt": "Dienos pietūs",
+      "en": "Weekday lunch",
+      "image": "table",
+      "notes": {
+        "lt": "11:00–14:00 · Sriuba 3,50 €. Dienos patiekalas 11 €. Patiekalas su sriuba 12 €.",
+        "en": "11:00–14:00 · Soup €3.50. Main €11. Main with soup €12."
+      },
+      "groups": [
+        {
+          "lt": "Pirmadienis",
+          "en": "Monday",
+          "items": [
+            [
+              "Jautienos sriuba su daržovėmis ir grikiais",
+              "Beef soup with vegetables and buckwheat",
+              "",
+              "",
+              3.5
+            ],
+            [
+              "Jautienos smash su karamelizuotais svogūnais",
+              "Smash beef burger with caramelised onions",
+              "Jautiena, burgerio bandelė iš sluoksniuotos tešlos, karamelizuoti svogūnai, čederis, marinuoti agurkai, burgerio padažas.",
+              "Beef, flaky pastry burger bun, caramelised onions, cheddar, pickles and burger sauce.",
+              11
+            ],
+            [
+              "Miso baklažanas su mėtomis",
+              "Miso aubergine with mint",
+              "Baklažanas, miso pasta, feta, mėtos, pomidorai, graikiški riešutai, medus, balzaminis actas, alyvuogių aliejus, laimo sultys.",
+              "Aubergine, miso paste, feta, mint, tomatoes, walnuts, honey, balsamic vinegar, olive oil and lime juice.",
+              11
+            ]
+          ]
+        },
+        {
+          "lt": "Antradienis",
+          "en": "Tuesday",
+          "items": [
+            [
+              "Kreminė pomidorų sriuba su degintomis paprikomis",
+              "Creamy tomato and charred pepper soup",
+              "",
+              "",
+              3.5
+            ],
+            [
+              "Chicken Katsu",
+              "Chicken Katsu",
+              "Sourdough duona, panko vištiena, iceberg salotos, kimchi aioli, pomidorai.",
+              "Sourdough, panko chicken, iceberg lettuce, kimchi aioli and tomatoes.",
+              11
+            ],
+            [
+              "Pasta su burrata ir pesto",
+              "Pasta with burrata and pesto",
+              "Pasta, burrata, bazilikų pesto, alyvuogių aliejus, sviestas.",
+              "Pasta, burrata, basil pesto, olive oil and butter.",
+              11
+            ]
+          ]
+        },
+        {
+          "lt": "Trečiadienis",
+          "en": "Wednesday",
+          "items": [
+            [
+              "Rūgštynių sriuba",
+              "Sorrel soup",
+              "",
+              "",
+              3.5
+            ],
+            [
+              "Bowl su lašiša",
+              "Salmon bowl",
+              "Ryžiai, edamame pupelės, ridikėliai, kimči morkos, laimas, sezamai, lašišos filė, kimči majonezas, ponzu padažas, avokadas.",
+              "Rice, edamame, radishes, kimchi carrots, lime, sesame, salmon fillet, kimchi mayonnaise, ponzu and avocado.",
+              11
+            ],
+            [
+              "Romaninių salotų salotos su vištiena",
+              "Romaine salad with chicken",
+              "Romaninės salotos, fokačija, kietasis sūris, pomidorai, ančiuvių filė, vištienos filė, tuno majonezas, laimo sultys.",
+              "Romaine, focaccia, hard cheese, tomatoes, anchovy fillets, chicken fillet, tuna mayonnaise and lime juice.",
+              11
+            ]
+          ]
+        },
+        {
+          "lt": "Ketvirtadienis",
+          "en": "Thursday",
+          "items": [
+            [
+              "Tom Yum sriuba",
+              "Tom Yum soup",
+              "",
+              "",
+              3.5
+            ],
+            [
+              "Vištienos šnicelis su wasabi majonezu",
+              "Chicken schnitzel with wasabi mayonnaise",
+              "Vištienos filė džiūvėsėliuose, wasabi majonezas, bulvytės, jogurtinės salotos.",
+              "Breaded chicken fillet, wasabi mayonnaise, fries and yoghurt salad.",
+              11
+            ],
+            [
+              "Tuno salotos",
+              "Tuna salad",
+              "Rukola, špinatai, paprika, virtas kiaušinis, marinuoti svogūnai, pomidorai, feta, agurkai, citrinų aliejus, konservuotas tunas, druska, juodieji pipirai.",
+              "Rocket, spinach, pepper, boiled egg, pickled onions, tomatoes, feta, cucumbers, lemon oil, tinned tuna, salt and black pepper.",
+              11
+            ]
+          ]
+        },
+        {
+          "lt": "Penktadienis",
+          "en": "Friday",
+          "items": [
+            [
+              "Grybų sriuba",
+              "Mushroom soup",
+              "",
+              "",
+              3.5
+            ],
+            [
+              "Fish’n’chips",
+              "Fish’n’chips",
+              "Menkė, bulvytės, tzatziki padažas.",
+              "Cod, fries and tzatziki.",
+              11
+            ],
+            [
+              "Trigubas itališkas sumuštinis",
+              "Triple Italian sandwich",
+              "Natūralaus raugo duona su sėklomis, prosciutto cotto kumpis, coppa kumpis, mortadella dešra, pesto, gražgarstės, pomidorai, parmezanas, marinuoti svogūnai.",
+              "Seeded sourdough, prosciutto cotto, coppa, mortadella, pesto, rocket, tomatoes, Parmesan and pickled onions.",
+              11
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "coffee",
+      "lt": "Kava ir arbata",
+      "en": "Coffee & tea",
+      "image": "coffee",
+      "notes": {
+        "lt": "",
+        "en": ""
+      },
+      "groups": [
+        {
+          "lt": "",
+          "en": "",
+          "items": [
+            [
+              "Espresso",
+              "Espresso",
+              "",
+              "",
+              2.3
+            ],
+            [
+              "Dvigubas espresso",
+              "Double espresso",
+              "",
+              "",
+              2.7
+            ],
+            [
+              "Espresso macchiato",
+              "Espresso macchiato",
+              "",
+              "",
+              2.6
+            ],
+            [
+              "Juoda kava",
+              "Black coffee",
+              "",
+              "",
+              2.8
+            ],
+            [
+              "Juoda kava su pienu",
+              "Black coffee with milk",
+              "",
+              "",
+              3.1
+            ],
+            [
+              "Americano",
+              "Americano",
+              "",
+              "",
+              2.8
+            ],
+            [
+              "Cappuccino",
+              "Cappuccino",
+              "",
+              "",
+              3.6
+            ],
+            [
+              "Latte",
+              "Latte",
+              "",
+              "",
+              3.8
+            ],
+            [
+              "Flat white",
+              "Flat white",
+              "",
+              "",
+              3.8
+            ],
+            [
+              "Matcha",
+              "Matcha",
+              "",
+              "",
+              3.8
+            ],
+            [
+              "Matcha latte",
+              "Matcha latte",
+              "",
+              "",
+              4.7
+            ],
+            [
+              "Šalta matcha latte su braškėmis / mangais / vyšniomis",
+              "Iced matcha latte with strawberry / mango / cherry",
+              "",
+              "",
+              5.5
+            ],
+            [
+              "Espresso / matcha tonic",
+              "Espresso / matcha tonic",
+              "",
+              "",
+              5.5
+            ],
+            [
+              "Rabarbarų espresso tonic",
+              "Rhubarb espresso tonic",
+              "",
+              "",
+              6.5
+            ],
+            [
+              "Kakava",
+              "Cocoa",
+              "",
+              "",
+              3.5
+            ],
+            [
+              "Arbata",
+              "Tea",
+              "Žolelių / žalia / juoda / vaisinė.",
+              "Herbal / green / black / fruit.",
+              3.8
+            ]
+          ]
+        },
+        {
+          "lt": "Pieno pasirinkimas",
+          "en": "Milk supplement",
+          "items": [
+            [
+              "Migdolų / kokosų / avižų pienas / be laktozės",
+              "Almond / coconut / oat / lactose-free milk",
+              "",
+              "",
+              0.7
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "drinks",
+      "lt": "Gaivieji gėrimai ir alus",
+      "en": "Soft drinks & beer",
+      "image": "terrace",
+      "notes": {
+        "lt": "",
+        "en": ""
+      },
+      "groups": [
+        {
+          "lt": "Gaivieji gėrimai",
+          "en": "Soft drinks",
+          "items": [
+            [
+              "Roy kombuča · 0,33 l",
+              "Roy kombucha · 0.33 L",
+              "Avietė / imbieras / originali / agurkas ir mėta / braškė ir bazilikas / citrina.",
+              "Raspberry / ginger / original / cucumber and mint / strawberry and basil / lemon.",
+              5
+            ],
+            [
+              "Acala Kombucha · 0,75 l",
+              "Acala Kombucha · 0.75 L",
+              "Balto vyno / rosé.",
+              "White wine / rosé.",
+              25
+            ],
+            [
+              "Marela sultys · 0,25 l",
+              "Marela juice · 0.25 L",
+              "Obuolių / apelsinų / morkų, obuolių ir apelsinų.",
+              "Apple / orange / carrot, apple and orange.",
+              4
+            ],
+            [
+              "Šviežiai spaustos sultys",
+              "Freshly squeezed juice",
+              "Greipfrutų / apelsinų / miksas / morkų.",
+              "Grapefruit / orange / mixed / carrot.",
+              5
+            ],
+            [
+              "On Lemon limonadas · 0,33 l",
+              "On Lemon lemonade · 0.33 L",
+              "Rabarbarų / apelsinų / žaliųjų citrinų.",
+              "Rhubarb / orange / lime.",
+              4.7
+            ],
+            [
+              "Coca-Cola / Coca-Cola Zero / Fanta / Sprite · 0,25 l",
+              "Coca-Cola / Coca-Cola Zero / Fanta / Sprite · 0.25 L",
+              "",
+              "",
+              3
+            ],
+            [
+              "Mea Culpa · 0,7 l",
+              "Mea Culpa · 0.7 L",
+              "Imbieras / acai ir juodieji serbentai.",
+              "Ginger / açaí and blackcurrant.",
+              15
+            ],
+            [
+              "Mea Culpa · 0,33 l",
+              "Mea Culpa · 0.33 L",
+              "Imbieras / acai ir juodieji serbentai.",
+              "Ginger / açaí and blackcurrant.",
+              6.5
+            ],
+            [
+              "Lauretana vanduo · 0,75 l",
+              "Lauretana water · 0.75 L",
+              "Gazuotas / negazuotas.",
+              "Sparkling / still.",
+              5
+            ],
+            [
+              "Lauretana vanduo · 0,33 l",
+              "Lauretana water · 0.33 L",
+              "Gazuotas / negazuotas.",
+              "Sparkling / still.",
+              3
+            ],
+            [
+              "Red Bull / Red Bull Zero Sugar · 0,25 l",
+              "Red Bull / Red Bull Zero Sugar · 0.25 L",
+              "",
+              "",
+              3.9
+            ],
+            [
+              "Paloma limonadas · 0,25 l",
+              "Paloma lemonade · 0.25 L",
+              "",
+              "",
+              4.6
+            ],
+            [
+              "Elektrolitai · 0,5 l",
+              "Electrolytes · 0.5 L",
+              "",
+              "",
+              3.5
+            ],
+            [
+              "Stalo vanduo",
+              "Table water",
+              "",
+              "",
+              2.5
+            ]
+          ]
+        },
+        {
+          "lt": "Alus ir sidras",
+          "en": "Beer & cider",
+          "items": [
+            [
+              "Švyturys Ekstra · 0,5 l",
+              "Švyturys Ekstra · 0.5 L",
+              "",
+              "",
+              5.5
+            ],
+            [
+              "Raudonų Plytų · 0,33 l",
+              "Raudonų Plytų · 0.33 L",
+              "Bėganti Kopa / Keturi Vėjai / Penki Mazgai.",
+              "Bėganti Kopa / Keturi Vėjai / Penki Mazgai.",
+              4.8
+            ],
+            [
+              "Tinginio Pantis obuolių sidras · 0,33 l",
+              "Tinginio Pantis apple cider · 0.33 L",
+              "",
+              "",
+              5.9
+            ],
+            [
+              "Carlsberg Non-Alco · 0,33 l",
+              "Carlsberg Non-Alco · 0.33 L",
+              "",
+              "",
+              4
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "wine",
+      "lt": "Vyno korta",
+      "en": "Wine list",
+      "image": "terrace",
+      "notes": {
+        "lt": "Kur pateiktos dvi kainos – taurė / butelis.",
+        "en": "Paired prices are per glass / bottle."
+      },
+      "groups": [
+        {
+          "lt": "Baltas vynas",
+          "en": "White wine",
+          "items": [
+            [
+              "Cantine San Marzano Timo Vermentino Salento I.G.P.",
+              "Cantine San Marzano Timo Vermentino Salento I.G.P.",
+              "",
+              "",
+              [
+                7,
+                29
+              ]
+            ],
+            [
+              "Alois Lageder Terra Alpina Pinot Grigio Dolomiti IGT",
+              "Alois Lageder Terra Alpina Pinot Grigio Dolomiti IGT",
+              "",
+              "",
+              [
+                10,
+                45
+              ]
+            ],
+            [
+              "Hans Greyl Sauvignon Blanc Marlborough",
+              "Hans Greyl Sauvignon Blanc Marlborough",
+              "",
+              "",
+              [
+                10,
+                49
+              ]
+            ],
+            [
+              "Moutard-Diligent Chablis A.C.",
+              "Moutard-Diligent Chablis A.C.",
+              "",
+              "",
+              [
+                15,
+                69
+              ]
+            ],
+            [
+              "Zenato Colombara Soave Classico D.O.C.",
+              "Zenato Colombara Soave Classico D.O.C.",
+              "",
+              "",
+              38
+            ],
+            [
+              "Mendes & Symington Contacto Loureiro Vinho Verde D.O.C.",
+              "Mendes & Symington Contacto Loureiro Vinho Verde D.O.C.",
+              "",
+              "",
+              41
+            ]
+          ]
+        },
+        {
+          "lt": "Raudonas vynas",
+          "en": "Red wine",
+          "items": [
+            [
+              "San Marzano Naca Puglia IGP Organic",
+              "San Marzano Naca Puglia IGP Organic",
+              "",
+              "",
+              [
+                8,
+                49
+              ]
+            ],
+            [
+              "Alois Lageder Pinot Noir Südtirol-Alto Adige DOC",
+              "Alois Lageder Pinot Noir Südtirol-Alto Adige DOC",
+              "",
+              "",
+              [
+                13,
+                63
+              ]
+            ]
+          ]
+        },
+        {
+          "lt": "Rožinis vynas",
+          "en": "Rosé",
+          "items": [
+            [
+              "Vigneti del Vulture Pipoli Rosato Basilicata IGP",
+              "Vigneti del Vulture Pipoli Rosato Basilicata IGP",
+              "",
+              "",
+              [
+                9,
+                43
+              ]
+            ],
+            [
+              "Miraval Côtes de Provence AOP",
+              "Miraval Côtes de Provence AOP",
+              "",
+              "",
+              65
+            ]
+          ]
+        },
+        {
+          "lt": "Šampanas",
+          "en": "Champagne",
+          "items": [
+            [
+              "Piper-Heidsieck Rosé Sauvage Brut AOC",
+              "Piper-Heidsieck Rosé Sauvage Brut AOC",
+              "",
+              "",
+              120
+            ],
+            [
+              "Piper-Heidsieck Cuvée Brut AOC",
+              "Piper-Heidsieck Cuvée Brut AOC",
+              "",
+              "",
+              110
+            ],
+            [
+              "Charles Heidsieck Brut Réserve",
+              "Charles Heidsieck Brut Réserve",
+              "",
+              "",
+              149
+            ]
+          ]
+        },
+        {
+          "lt": "Putojantis vynas",
+          "en": "Sparkling wine",
+          "items": [
+            [
+              "Lacheteau Blanc de Noirs Brut Crémant de Loire AOP",
+              "Lacheteau Blanc de Noirs Brut Crémant de Loire AOP",
+              "",
+              "",
+              [
+                10,
+                50
+              ]
+            ],
+            [
+              "Masia Gran Cuvee Brut Organic Cava Eco",
+              "Masia Gran Cuvee Brut Organic Cava Eco",
+              "",
+              "",
+              [
+                9,
+                40
+              ]
+            ],
+            [
+              "Codorníu Zero Non-Alcoholic",
+              "Codorníu Zero Non-Alcoholic",
+              "",
+              "",
+              [
+                7,
+                32
+              ]
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "spirits",
+      "lt": "Stiprieji gėrimai",
+      "en": "Spirits",
+      "image": "terrace",
+      "notes": {
+        "lt": "",
+        "en": ""
+      },
+      "groups": [
+        {
+          "lt": "Degtinė",
+          "en": "Vodka",
+          "items": [
+            [
+              "Stumbras Vodka Premium Organic",
+              "Stumbras Vodka Premium Organic",
+              "",
+              "",
+              4
+            ],
+            [
+              "Tito’s Handmade Vodka",
+              "Tito’s Handmade Vodka",
+              "",
+              "",
+              5
+            ]
+          ]
+        },
+        {
+          "lt": "Konjakas",
+          "en": "Cognac",
+          "items": [
+            [
+              "Godet V.S.O.P. Original",
+              "Godet V.S.O.P. Original",
+              "",
+              "",
+              8
+            ]
+          ]
+        },
+        {
+          "lt": "Viskis",
+          "en": "Whisky",
+          "items": [
+            [
+              "Maker’s Mark Kentucky Straight Bourbon",
+              "Maker’s Mark Kentucky Straight Bourbon",
+              "",
+              "",
+              6
+            ],
+            [
+              "Deanston Virgin Oak Highland Single Malt",
+              "Deanston Virgin Oak Highland Single Malt",
+              "",
+              "",
+              7
+            ]
+          ]
+        },
+        {
+          "lt": "Tekila",
+          "en": "Tequila",
+          "items": [
+            [
+              "Ocho Tequila Plata Single Estate",
+              "Ocho Tequila Plata Single Estate",
+              "",
+              "",
+              5
+            ],
+            [
+              "Ocho Tequila Reposado Single Estate",
+              "Ocho Tequila Reposado Single Estate",
+              "",
+              "",
+              5
+            ]
+          ]
+        },
+        {
+          "lt": "Džinas",
+          "en": "Gin",
+          "items": [
+            [
+              "Roku Japanese Craft Gin",
+              "Roku Japanese Craft Gin",
+              "",
+              "",
+              6
+            ]
+          ]
+        },
+        {
+          "lt": "Romas",
+          "en": "Rum",
+          "items": [
+            [
+              "Angostura 1919 Premium 8YO",
+              "Angostura 1919 Premium 8YO",
+              "",
+              "",
+              6
+            ]
+          ]
+        },
+        {
+          "lt": "Likeris ir vermutas",
+          "en": "Liqueurs & vermouth",
+          "items": [
+            [
+              "Fernet Branca",
+              "Fernet Branca",
+              "",
+              "",
+              5
+            ],
+            [
+              "Limoncello",
+              "Limoncello",
+              "",
+              "",
+              5
+            ],
+            [
+              "Disaronno Amaretto",
+              "Disaronno Amaretto",
+              "",
+              "",
+              6
+            ],
+            [
+              "Campari",
+              "Campari",
+              "",
+              "",
+              5
+            ],
+            [
+              "Antica Formula Vermutas",
+              "Antica Formula Vermouth",
+              "",
+              "",
+              7
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cocktails",
+      "lt": "Kokteiliai",
+      "en": "Cocktails",
+      "image": "terrace",
+      "notes": {
+        "lt": "",
+        "en": ""
+      },
+      "groups": [
+        {
+          "lt": "",
+          "en": "",
+          "items": [
+            [
+              "Aperol Spritz",
+              "Aperol Spritz",
+              "Aperol, prosecco, gazuotas vanduo, apelsinas.",
+              "Aperol, prosecco, sparkling water and orange.",
+              10
+            ],
+            [
+              "Limoncello Spritz",
+              "Limoncello Spritz",
+              "Limoncello, prosecco, gazuotas vanduo, citrina.",
+              "Limoncello, prosecco, sparkling water and lemon.",
+              12
+            ],
+            [
+              "Hugo Spritz",
+              "Hugo Spritz",
+              "Šeivamedžių likeris, prosecco, gazuotas vanduo, mėta.",
+              "Elderflower liqueur, prosecco, sparkling water and mint.",
+              12
+            ],
+            [
+              "Negroni",
+              "Negroni",
+              "Džinas, Campari, vermutas.",
+              "Gin, Campari and vermouth.",
+              11
+            ],
+            [
+              "Paloma",
+              "Paloma",
+              "Tekila, cukraus sirupas, greipfrutų sultys, Paloma limonadas.",
+              "Tequila, sugar syrup, grapefruit juice and Paloma lemonade.",
+              12
+            ],
+            [
+              "Espresso Martini",
+              "Espresso Martini",
+              "Degtinė, espresso, kavos likeris.",
+              "Vodka, espresso and coffee liqueur.",
+              11
+            ],
+            [
+              "Strawberry Gin and Tonic",
+              "Strawberry Gin and Tonic",
+              "Braškių džinas, tonikas, braškės.",
+              "Strawberry gin, tonic and strawberries.",
+              9.5
+            ],
+            [
+              "Mimosa",
+              "Mimosa",
+              "Prosecco, šviežios apelsinų sultys.",
+              "Prosecco and fresh orange juice.",
+              9
+            ]
+          ]
+        },
+        {
+          "lt": "Nealkoholiniai kokteiliai",
+          "en": "Alcohol-free cocktails",
+          "items": [
+            [
+              "Virgin Mimosa",
+              "Virgin Mimosa",
+              "Codorníu 0% prosecco, šviežios apelsinų sultys.",
+              "Codorníu 0% prosecco and fresh orange juice.",
+              8
+            ],
+            [
+              "Virgin Gin & Tonic",
+              "Virgin Gin & Tonic",
+              "Braškinis nealkoholinis džinas, tonikas.",
+              "Alcohol-free strawberry gin and tonic.",
+              8.5
+            ],
+            [
+              "Virgin Aperol Spritz",
+              "Virgin Aperol Spritz",
+              "Codorníu 0% prosecco, Luxardo aperityvas.",
+              "Codorníu 0% prosecco and Luxardo aperitif.",
+              8.5
+            ]
+          ]
+        }
+      ]
+    }
   ]
 }
