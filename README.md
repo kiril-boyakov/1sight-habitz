@@ -1,44 +1,17 @@
-# HABITS Vilnius website proposal
+# HABITS Vilnius
 
-A complete static, bilingual hospitality website. Lithuanian is the default. All content is pre-rendered HTML, with small progressive enhancements in vanilla JavaScript. There are no application dependencies or installation step.
-
-## Run
-
-From this folder:
+Bilingual restaurant landing page, photographed dine-in menu, event gallery and enquiries.
 
 ```sh
 python3 build.py
 python3 verify_site.py
-python3 -m http.server 8765 --directory dist
+node demo.mjs
 ```
 
-Open `http://localhost:8765/`. Serve over HTTP; opening `index.html` directly with `file://` does not resolve absolute asset and route paths.
+Open http://127.0.0.1:8765/ for Lithuanian or /en/ for English. The demo server requires Node 22.13 or newer. It stores enquiries locally. See [enquiry setup](INQUIRIES.md) to connect production storage and email.
 
-## Routes
+The menu is maintained in `src/menu.json`. Prices are restaurant prices in euros. The weekday lunch selection and Monday–Thursday differences follow the supplied menu sheets. Pages are generated in `dist/`. Set `HABITS_SITE_ORIGIN` when generating for a different origin.
 
-| Lithuanian | English | Purpose |
-|---|---|---|
-| `/` | `/en/` | Homepage, place, evening story and visit details |
-| `/menu/` | `/en/menu/` | Six categories and 37 dishes/drinks |
-| `/privacy/` | `/en/privacy/` | Actual proposal technology and external services |
+The demo uses the original HABITS photography, wordmark and fonts. Public event photos link back to the venue’s Breezit gallery and the Sardinele collaboration. Partner stories and translations are maintained in `experiences.py`.
 
-Category and dish anchors work directly. Language switching preserves both the route and current URL fragment. Native browser history retains normal back navigation.
-
-## Updating
-
-- `src/content.json`: all page translations and image alt text.
-- `src/images.json`: original photo dimensions and responsive WebP variants.
-- `src/menu.json`: Vilnius menu data, English translations, delivery-reference prices and provenance.
-- `src/site.css`: responsive layout and reduced-motion rules.
-- `src/site.js`: modal navigation, focus management, category navigation and photographic reveals.
-- `build.py`: semantic pages, metadata, Restaurant JSON-LD and static output.
-- `dist/assets/`: placeholder artwork and self-hosted fonts.
-- `licenses/`: OFL font licenses for Bricolage Grotesque, Manrope and the Sigmar accent face.
-
-Build again after changing source. To deploy to Netlify, use `python3 build.py` as the build command and `dist` as the publish directory. Set `HABITS_SITE_ORIGIN` to the deployed origin to update metadata.
-
-## Public collaboration copy
-
-The photos, video and original wordmark from the private proposal have been replaced by placeholder artwork and a typeset name. To add approved photographs, put the WebP files in `dist/assets/` and update the variants in `src/images.json` before rebuilding. The menu labels its Wolt delivery reference prices. Confirm dine-in prices, service details and permission to use brand media before a restaurant launch.
-
-Revision 4 adds native-scroll photographic transitions and the revised bilingual menu. Menu search runs locally in the browser and matches names/ingredients without requiring diacritics. No dependency install or new media is needed. All menu entries remain available in the generated HTML when JavaScript is disabled.
+Build the current standalone v7 preview with `python3 preview/build_preview.py`. Menu photo sources are documented in [MEDIA.md](MEDIA.md). Dinner is a separate collaboration format; its individual event menu is announced by HABITS.

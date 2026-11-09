@@ -1,0 +1,170 @@
+[
+  {
+    "id": "dinner",
+    "file": "instagram-dinner.webp",
+    "url": "https://www.instagram.com/habits.vilnius/p/DfUktyEiHl6/",
+    "lt": "Prie vakarienės stalo",
+    "en": "Dinner together",
+    "width": 480,
+    "height": 640,
+    "kind": "collab"
+  },
+  {
+    "id": "chefs-table",
+    "file": "gallery-chefs-table.webp",
+    "url": "https://breezit.lt/habits-bakery",
+    "lt": "Skoniai, kuriais dalijamės",
+    "en": "Flavours to share",
+    "width": 800,
+    "height": 800,
+    "kind": "collab",
+    "sourceLabel": "Breezit ↗"
+  },
+  {
+    "id": "fondue",
+    "file": "instagram-fondue.webp",
+    "url": "https://www.instagram.com/habits.vilnius/reel/DfFgveGIKM1/",
+    "lt": "Pasidalinkim",
+    "en": "Made to share",
+    "width": 360,
+    "height": 640,
+    "kind": "collab"
+  },
+  {
+    "id": "friends",
+    "file": "instagram-friends.webp",
+    "url": "https://www.instagram.com/habits.vilnius/reel/Dd1i7DXo6wu/",
+    "lt": "Gera kompanija",
+    "en": "Good company",
+    "width": 360,
+    "height": 640,
+    "kind": "celebration"
+  },
+  {
+    "id": "afterdark",
+    "file": "instagram-afterdark.webp",
+    "url": "https://www.instagram.com/habits.vilnius/reel/Ddq7yFLIGXy/",
+    "lt": "Kai ateina vakaras",
+    "en": "After dark",
+    "width": 360,
+    "height": 640,
+    "kind": "collab"
+  },
+  {
+    "id": "pastry-table",
+    "file": "instagram-pastry-table.webp",
+    "url": "https://www.instagram.com/habits.vilnius/p/Dcqei7PCJls/",
+    "lt": "Iš mūsų kepyklos",
+    "en": "From our bakery",
+    "width": 480,
+    "height": 640,
+    "kind": "bakery"
+  },
+  {
+    "id": "fresh-bakes",
+    "file": "gallery-fresh-bakes.webp",
+    "url": "https://www.instagram.com/habits.vilnius/reel/Deq2y4TIPlh/",
+    "lt": "Švieži kepiniai",
+    "en": "Fresh bakes",
+    "width": 360,
+    "height": 640,
+    "kind": "bakery"
+  },
+  {
+    "id": "dessert",
+    "file": "instagram-dessert.webp",
+    "url": "https://www.instagram.com/habits.vilnius/reel/DeoMbXyooU9/",
+    "lt": "Saldus susitikimas",
+    "en": "Something sweet",
+    "width": 360,
+    "height": 640,
+    "kind": "bakery"
+  },
+  {
+    "id": "coffee-table",
+    "file": "instagram-coffee-table.webp",
+    "url": "https://www.instagram.com/habits.vilnius/p/DfRsAXHiEYU/",
+    "lt": "Dar vienam puodeliui",
+    "en": "One more coffee",
+    "width": 480,
+    "height": 640,
+    "kind": "bakery"
+  },
+  {
+    "id": "team-table",
+    "file": "gallery-team-table.webp",
+    "url": "https://breezit.lt/habits-bakery",
+    "sourceLabel": "Breezit ↗",
+    "lt": "Stalas komandai",
+    "en": "A table for the team",
+    "kind": "corporate",
+    "width": 800,
+    "height": 800
+  },
+  {
+    "id": "buffet",
+    "file": "gallery-buffet.webp",
+    "url": "https://breezit.lt/habits-bakery",
+    "sourceLabel": "Breezit ↗",
+    "lt": "Furšetas",
+    "en": "The buffet",
+    "kind": "corporate",
+    "width": 800,
+    "height": 800
+  },
+  {
+    "id": "kitchen-team",
+    "file": "gallery-kitchen-team.webp",
+    "url": "https://breezit.lt/habits-bakery",
+    "sourceLabel": "Breezit ↗",
+    "lt": "Pasiruošimas jūsų renginiui",
+    "en": "Getting ready for your event",
+    "kind": "corporate",
+    "width": 800,
+    "height": 800
+  },
+  {
+    "id": "private-space",
+    "file": "gallery-private-space.webp",
+    "url": "https://breezit.lt/habits-bakery",
+    "sourceLabel": "Breezit ↗",
+    "lt": "Erdvė jūsų kompanijai",
+    "en": "Room for your company",
+    "kind": "corporate",
+    "width": 800,
+    "height": 800
+  },
+  {
+    "id": "celebration-table",
+    "file": "gallery-celebration-table.webp",
+    "url": "https://breezit.lt/habits-bakery",
+    "sourceLabel": "Breezit ↗",
+    "lt": "Pasiruošę švęsti",
+    "en": "Set for a celebration",
+    "kind": "celebration",
+    "width": 800,
+    "height": 800
+  },
+  {
+    "id": "celebration-room",
+    "file": "gallery-celebration-room.webp",
+    "url": "https://breezit.lt/habits-bakery",
+    "sourceLabel": "Breezit ↗",
+    "lt": "Šventės erdvė",
+    "en": "A setting for your occasion",
+    "kind": "celebration",
+    "width": 800,
+    "height": 800
+  },
+  {
+    "id": "celebration-detail",
+    "file": "gallery-celebration-detail.webp",
+    "url": "https://breezit.lt/habits-bakery",
+    "sourceLabel": "Breezit ↗",
+    "lt": "Mažos vakaro detalės",
+    "en": "Little evening details",
+    "kind": "celebration",
+    "width": 800,
+    "height": 800
+  }
+]
