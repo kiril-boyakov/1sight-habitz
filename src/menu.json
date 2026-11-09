@@ -1,0 +1,56 @@
+{
+  "source": "https://wolt.com/lt/ltu/vilnius/restaurant/habits-aukstaiciu-g",
+  "checked": "2026-11-08",
+  "priceType": "delivery-reference",
+  "categories": [
+    {"id":"breakfast","lt":"Pusryčiai","en":"Breakfast","image":"table","items":[
+      ["Kepti grikiai su tunu","Buckwheat with tuna","Grikiai, kiaušinis, tunas, artišokai, portobello, majonezas, avokadas, čili aliejus. Su jogurtinėmis salotomis.","Buckwheat, egg, tuna, artichokes, portobello, mayonnaise, avocado, chilli oil. With yoghurt salad.",15.8],
+      ["Avokado skrebutis","Avocado toast","Raugo duona su sėklomis, avokadas, pomidorų užtepėlė, pomidorų salsa su ančiuviais, lazdynų riešutai, čili aliejus, mikrožalumynai.","Seeded sourdough, avocado, tomato spread, tomato and anchovy salsa, hazelnuts, chilli oil, microgreens.",12.8],
+      ["Šakšuka","Shakshuka","Pomidorų ir prieskonių troškinys, du kiaušiniai, Jeruzalės beigelis, žolelės, čili aliejus.","Spiced tomatoes, two eggs, Jerusalem bagel, herbs, chilli oil.",13.8],
+      ["Šakšuka su burrata (be kiaušinių)","Shakshuka with burrata (without eggs)","Pomidorai, prieskoniai, burrata, focaccia, pesto, trumų aliejus, žolelės, čili aliejus.","Tomatoes, spices, burrata, focaccia, pesto, truffle oil, herbs, chilli oil.",15.3],
+      ["Tuno tataki salotos","Tuna tataki salad","Geltonpelekis tunas, žirnių ankštys, edamame, brokoliai, radicchio, sezamai, ponzu, majonezas.","Yellowfin tuna, pea pods, edamame, broccoli, radicchio, sesame, ponzu, mayonnaise.",15],
+      ["Nourish dubenėlis su lašiša","Nourish salmon bowl","Lašiša, laukiniai ryžiai, saldžiosios bulvės, topinambai, ponzu, kiaušinis, majonezas, pankolis.","Salmon, wild rice, sweet potato, Jerusalem artichokes, ponzu, egg, mayonnaise, fennel.",16.5],
+      ["Vaikiškas keptas sumuštinis su kumpiu ir sūriu","Children’s toasted ham and cheese sandwich","Focaccia, pistacijų mortadela, mocarela, bulvytės fri, majonezas.","Focaccia, pistachio mortadella, mozzarella, fries, mayonnaise.",10],
+      ["Coco Berry Crunch","Coco Berry Crunch","Granola, graikiškas jogurtas, kokosų puta, braškės, avietės, rabarbarų tyrė, marinuoti rabarbarai.","Granola, Greek yoghurt, coconut foam, strawberries, raspberries, rhubarb purée, pickled rhubarb.",12.3]
+    ]},
+    {"id":"sandwiches","lt":"Sumuštiniai","en":"Sandwiches","image":"sandwich","items":[
+      ["Habits Club sumuštinis","Habits Club sandwich","Sluoksniuota bandelė, čederis, kiaušinių salotos, šoninė, pomidorai, romaninės salotos, kalakutiena.","Laminated bun, cheddar, egg salad, bacon, tomatoes, romaine, turkey.",15.8],
+      ["Trigubas itališkos mėsos sumuštinis","Triple Italian meat sandwich","Raugo duona su sėklomis, prosciutto cotto, coppa, mortadella, pesto, grąžgarstės, pomidorai, parmezanas, marinuoti svogūnai.","Seeded sourdough, prosciutto cotto, coppa, mortadella, pesto, rocket, tomatoes, Parmesan, pickled onions.",15.8],
+      ["The Pastrami","The Pastrami","Focaccia, pastrami, agurkai, ančiuvių majonezas, marinuoti svogūnai, grąžgarstės, radicchio.","Focaccia, pastrami, cucumber, anchovy mayonnaise, pickled onions, rocket, radicchio.",17.8]
+    ]},
+    {"id":"eggs","lt":"Kiaušiniai","en":"Eggs","image":"table","items":[
+      ["Milijonieriaus kiaušinienė","Millionaire’s eggs","Kepti kiaušiniai, majonezas, krevetės, žolelės, kruasanas. Su agurkų, pomidorų, svogūnų, pankolio, baziliko ir lazdynų riešutų salotomis, čili bei citrinų aliejumi.","Fried eggs, mayonnaise, prawns, herbs, croissant. With cucumber, tomato, onion, fennel, basil and hazelnut salad, chilli and lemon oils.",14.3],
+      ["Turkiški kiaušiniai","Turkish eggs","Jogurtas, paprikų padažas, keptos morkos, du kiaušiniai, Jeruzalės beigelis, žolelės, čili aliejus. Su ridikėlių, pankolio ir cukinijų salotomis, citrinų aliejumi bei baziliku.","Yoghurt, pepper sauce, roasted carrots, two eggs, Jerusalem bagel, herbs, chilli oil. With radish, fennel and courgette salad, lemon oil and basil.",14.3],
+      ["Plakta kiaušinienė","Scrambled eggs","Kiaušiniai, rikota, raugo duona su sėklomis, parmezanas, čili aliejus, pomidorų padažas, mikrožalumynai.","Eggs, ricotta, seeded sourdough, Parmesan, chilli oil, tomato sauce, microgreens.",12.3]
+    ]},
+    {"id":"sides","lt":"Priedai","en":"Sides","image":"terrace","items":[
+      ["Milijonieriaus salotos","Millionaire’s salad","Agurkai, pomidorai, svogūnai, pankolis, bazilikas, lazdynų riešutai, čili ir citrinų aliejai.","Cucumber, tomatoes, onion, fennel, basil, hazelnuts, chilli and lemon oils.",4.3],
+      ["Cukinijų salotos","Courgette salad","Ridikėliai, marinuoti pankoliai, cukinijos, citrinų aliejus, bazilikas.","Radishes, pickled fennel, courgette, lemon oil, basil.",4.3],
+      ["Jogurtinės salotos","Yoghurt salad","Jogurtas, agurkai, pomidorai, marinuoti svogūnai, peperoni pipiras, juodieji sezamai.","Yoghurt, cucumber, tomatoes, pickled onion, peperoni pepper, black sesame.",4.3]
+    ]},
+    {"id":"bakes","lt":"Bandelės","en":"Bakes","image":"pastry","items":[
+      ["Migdolai / žemės riešutai kruasanas","Almond / peanut croissant","Sluoksniuota tešla, migdolų ir žemės riešutų įdaras.","Laminated pastry with almond and peanut filling.",5.4],
+      ["Cinamoninė","Cinnamon bun","Sluoksniuotos tešlos bandelė su cinamonu.","Laminated bun with cinnamon.",3.5],
+      ["Marcipaninė","Marzipan bun","Sluoksniuota tešla su marcipano įdaru.","Laminated pastry with marzipan filling.",4.8],
+      ["Braškė / maskarponė","Strawberry / mascarpone","Sluoksniuota tešla, braškės ir maskarponė.","Laminated pastry, strawberries and mascarpone.",5.3],
+      ["Kinder Bueno","Kinder Bueno","Sluoksniuota tešla su lazdyno riešutų kremu.","Laminated pastry with hazelnut cream.",5.7],
+      ["Pistacijų NY","Pistachio NY","Sluoksniuota tešla su pistacijų kremu.","Laminated pastry with pistachio cream.",5.5],
+      ["Obuoliai","Apple bun","Sluoksniuota tešla su obuolių įdaru.","Laminated pastry with apple filling.",4.3],
+      ["Lotus","Lotus","Sluoksniuota tešla su karamelinių sausainių kremu.","Laminated pastry with caramelised biscuit cream.",5]
+    ]},
+    {"id":"drinks","lt":"Gėrimai","en":"Drinks","image":"coffee","items":[
+      ["Kombucha ROY · 330 ml","Kombucha ROY · 330 ml","","",5],
+      ["Sultys Rauch · 200 ml","Rauch juice · 200 ml","","",3.2],
+      ["Fanta · 250 ml","Fanta · 250 ml","","",3.2],
+      ["Coca-Cola Zero · 250 ml","Coca-Cola Zero · 250 ml","","",3.2],
+      ["Coca-Cola · 250 ml","Coca-Cola · 250 ml","","",3.2],
+      ["Sprite · 250 ml","Sprite · 250 ml","","",3.2],
+      ["Šviežiai spaustos sultys · 250 ml","Freshly squeezed juice · 250 ml","","",6.2],
+      ["Vittel negazuotas vanduo · 750 ml","Vittel still water · 750 ml","","",5.5],
+      ["Paloma limonadas","Paloma lemonade","","",5],
+      ["Red Bull · 250 ml","Red Bull · 250 ml","","",4.5],
+      ["Red Bull Sugarfree · 250 ml","Red Bull Sugarfree · 250 ml","","",4.5],
+      ["J. Gasco Indian tonikas","J. Gasco Indian tonic","","",5]
+    ]}
+  ]
+}
