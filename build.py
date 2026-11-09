@@ -3,6 +3,9 @@
 from pathlib import Path
 from html import escape as esc
 import json, os, shutil
+from concurrent.futures import ThreadPoolExecutor
+from hashlib import sha256
+from urllib.request import urlopen
 
 ROOT=Path(__file__).resolve().parent
 OUT=ROOT/'dist'
@@ -31,7 +34,9 @@ def generate(lang,route):
     menu=base+'menu/'; booking='https://habits.tablein.com/'+lang
     def external(url,text,cls='text-link'): return f'<a class="{cls}" href="{esc(url)}" target="_blank" rel="noopener noreferrer">{esc(text)}{arrow()}</a>'
     def button(url,text,cls='primary'):return f'<a class="button {cls}" href="{esc(url)}">{esc(text)}{arrow()}</a>'
-    def brand():return f'<a class="brand" href="{base}" aria-label="{t["home"]}"><span class="brand-placeholder" aria-hidden="true">HABITS</span></a>'
+    def brand():
+        mark = '<img src="/assets/wordmark.png" alt="HABITS" width="686" height="151">' if MEDIA_ORIGIN else '<span class="brand-placeholder" aria-hidden="true">HABITS</span>'
+        return f'<a class="brand" href="{base}" aria-label="{t["home"]}">{mark}</a>'
     def languages():
         return '<div class="languages" aria-label="'+('Kalba' if lang=='lt' else 'Language')+'">'+''.join(f'<a href="{path if l==lang else other}" lang="{l}" hreflang="{l}" '+('aria-current="true"' if l==lang else f'data-language="{other}"')+'>'+l.upper()+'</a>'+('<span aria-hidden="true">/</span>' if l=='lt' else '') for l in ['lt','en'])+'</div>'
     def navigation():return f'<a href="{menu}">{t["menu"]}</a><a href="{base}#place">{t["place"]}</a><a href="{base}#visit">{t["visit"]}</a>'+external(booking,t['book'],'button primary')
@@ -39,7 +44,9 @@ def generate(lang,route):
     <dialog class="mobile-dialog" id="mobile-navigation" aria-label="{t['navigation']}"><div class="dialog-head">{brand()}<button class="close-nav">{t['close']} <span aria-hidden="true">×</span></button></div><nav>{navigation()}</nav>{languages()}<p class="dialog-address">Aukštaičių g. 7, Vilnius<br><a href="tel:+37062293186">+370 622 93186</a></p></dialog><noscript><nav class="no-script">{navigation()}</nav></noscript>'''
     footer=f'''<footer class="site-footer">{brand()}<div class="footer-links"><a href="{menu}">{t['menu']}</a><a href="{base}#place">{t['place']}</a><a href="{base}#visit">{t['visit']}</a><a class="social-button" href="{IG}" target="_blank" rel="noopener noreferrer" aria-label="HABITS Instagram"><svg viewBox="0 0 24 24" width="23" height="23" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3.4" y="3.4" width="17.2" height="17.2" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.6" r=".9" fill="currentColor" stroke="none"/></svg></a><a href="{base}privacy/">{t['privacy']}</a></div><div class="footer-bottom"><span>HABITS · Vilnius</span><span>{t['proposal']}</span></div></footer><nav class="mobile-actions{' hidden' if not route else ''}" aria-label="{'Greitos nuorodos' if lang=='lt' else 'Quick actions'}"><a href="{menu}">{t['menu']}</a>{external(booking,t['book'],'')}</nav>'''
     if not route:
-        body=f'''<main id="main"><section class="hero" aria-labelledby="hero-title">{picture('hero',t['altHero'],'hero-poster',priority=True)}<div class="hero-content"><p class="eyebrow">{t['heroLabel']}</p><h1 id="hero-title"><span>{t['hero1']}</span> <span>{t['hero2']}</span></h1><p class="hero-copy">{t['heroCopy']}</p><div class="hero-actions">{button(menu,t['explore'],'light')}{external(booking,t['book'],'button ghost')}</div></div><div class="hero-bottom"><a href="#visit">Aukštaičių g. 7, Vilnius</a></div></section>
+        film = f'''<video class="hero-film" muted playsinline loop preload="none" aria-hidden="true" tabindex="-1" data-src="/assets/habits-film.mp4" poster="/assets/hero-1080.webp"></video>''' if MEDIA_ORIGIN else ''
+        film_controls = f'''<div class="hero-bottom-right"><button class="video-toggle is-paused" aria-label="{t['playVideo']}" aria-pressed="false" data-play="{t['playVideo']}" data-pause="{t['pauseVideo']}"><svg class="pause-symbol" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 3h2v10H4zm6 0h2v10h-2z"/></svg><svg class="play-symbol" viewBox="0 0 16 16" aria-hidden="true"><path d="m5 3 8 5-8 5z"/></svg></button></div>''' if MEDIA_ORIGIN else ''
+        body=f'''<main id="main"><section class="hero" aria-labelledby="hero-title">{picture('hero',t['altHero'],'hero-poster',priority=True)}{film}<div class="hero-content"><p class="eyebrow">{t['heroLabel']}</p><h1 id="hero-title"><span>{t['hero1']}</span> <span>{t['hero2']}</span></h1><p class="hero-copy">{t['heroCopy']}</p><div class="hero-actions">{button(menu,t['explore'],'light')}{external(booking,t['book'],'button ghost')}</div></div><div class="hero-bottom"><a href="#visit">Aukštaičių g. 7, Vilnius</a>{film_controls}</div></section>
         <section class="intro" id="place"><div class="intro-copy reveal"><p class="eyebrow">{t['introLabel']}</p><h2>{t['introTitle'].replace('Geri įpročiai', '<span class=brand-phrase>Geri įpročiai</span>').replace('Good habits', '<span class=brand-phrase>Good habits</span>')}</h2><p>{t['introCopy']}</p><a class="text-link" href="#visit">{t['placeLink']}{arrow()}</a></div><div class="intro-visual"><div class="intro-photo scene-large drift-frame" data-drift="28">{picture('venue',t['altVenue'])}</div><figure class="coffee-detail reveal">{picture('coffee',t['altCoffee'])}<figcaption>{t['coffeeDetail']}</figcaption></figure></div></section>
         <section class="table-moment" data-scroll-scene aria-label="{t['sceneCopy']}">{picture('terrace',t['altTerrace'])}<h2>{''.join('<span>'+esc(part.strip())+'.</span>' for part in t['sceneCopy'].split('.') if part.strip())}</h2></section>
         <section class="menu-preview"><div class="section-top"><div><p class="eyebrow">{t['foodLabel']}</p><h2>{t['foodTitle']}</h2></div><a class="text-link" href="{menu}">{t['fullMenu']}{arrow()}</a></div><div class="food-editorial"><div class="food-photo scene-large drift-frame" data-drift="22">{picture('sandwich',t['altSandwich'])}</div><div class="highlight-list">'''
@@ -66,11 +73,34 @@ def generate(lang,route):
     description=t['menuDescription'] if route=='menu' else t['description']
     ltpath='/' +(route+'/' if route else '');enpath='/en/'+(route+'/' if route else '')
     schema={'@context':'https://schema.org','@type':'Restaurant','name':'HABITS','telephone':'+37062293186','address':{'@type':'PostalAddress','streetAddress':'Aukštaičių g. 7','addressLocality':'Vilnius','addressCountry':'LT'},'sameAs':[IG],'url':ORIGIN+base,'hasMenu':ORIGIN+menu,'acceptsReservations':booking}
-    head=f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="color-scheme" content="light"><title>{esc(title)}</title><meta name="description" content="{esc(description)}"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#f3f0e9"><link rel="canonical" href="{ORIGIN+path}"><link rel="alternate" hreflang="lt" href="{ORIGIN+ltpath}"><link rel="alternate" hreflang="en" href="{ORIGIN+enpath}"><link rel="alternate" hreflang="x-default" href="{ORIGIN+ltpath}"><meta property="og:type" content="website"><meta property="og:site_name" content="HABITS Vilnius"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(description)}"><meta property="og:url" content="{ORIGIN+path}"><meta property="og:locale" content="{'lt_LT' if lang=='lt' else 'en_GB'}"><meta property="og:locale:alternate" content="{'en_GB' if lang=='lt' else 'lt_LT'}"><meta property="og:image" content="{ORIGIN}/assets/placeholder.svg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="1500"><meta property="og:image:alt" content="Photo placeholder"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="/assets/favicon.svg"><link rel="stylesheet" href="/assets/site.css?v=4"><script src="/assets/site.js?v=4" defer></script><script type="application/ld+json">{json.dumps(schema,ensure_ascii=False)}</script></head><body>'''
+    social = 'social.jpg' if MEDIA_ORIGIN else 'placeholder.svg'
+    social_height = 630 if MEDIA_ORIGIN else 1500
+    social_alt = esc(t['altHero']) if MEDIA_ORIGIN else 'Photo placeholder'
+    favicon = 'favicon.png' if MEDIA_ORIGIN else 'favicon.svg'
+    head=f'''<!doctype html><html lang="{lang}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"><meta name="color-scheme" content="light"><title>{esc(title)}</title><meta name="description" content="{esc(description)}"><meta name="robots" content="noindex,nofollow"><meta name="theme-color" content="#f3f0e9"><link rel="canonical" href="{ORIGIN+path}"><link rel="alternate" hreflang="lt" href="{ORIGIN+ltpath}"><link rel="alternate" hreflang="en" href="{ORIGIN+enpath}"><link rel="alternate" hreflang="x-default" href="{ORIGIN+ltpath}"><meta property="og:type" content="website"><meta property="og:site_name" content="HABITS Vilnius"><meta property="og:title" content="{esc(title)}"><meta property="og:description" content="{esc(description)}"><meta property="og:url" content="{ORIGIN+path}"><meta property="og:locale" content="{'lt_LT' if lang=='lt' else 'en_GB'}"><meta property="og:locale:alternate" content="{'en_GB' if lang=='lt' else 'lt_LT'}"><meta property="og:image" content="{ORIGIN}/assets/{social}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="{social_height}"><meta property="og:image:alt" content="{social_alt}"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="/assets/{favicon}"><link rel="stylesheet" href="/assets/site.css?v=4"><script src="/assets/site.js?v=4" defer></script><script type="application/ld+json">{json.dumps(schema,ensure_ascii=False)}</script></head><body>'''
     dest=OUT/(path.lstrip('/'))/'index.html';dest.parent.mkdir(parents=True,exist_ok=True);dest.write_text(head+header+body+footer+'</body></html>')
 
 OUT.mkdir(exist_ok=True)
 (OUT / 'assets').mkdir(exist_ok=True)
+MEDIA_ORIGIN = os.environ.get('HABITS_MEDIA_ORIGIN', '').rstrip('/')
+if MEDIA_ORIGIN:
+    manifest = json.loads((ROOT / 'src/deploy-media.json').read_text())
+
+    def fetch_media(item):
+        name, expected_digest = item
+        destination = OUT / 'assets' / name
+        if destination.is_file() and sha256(destination.read_bytes()).hexdigest() == expected_digest:
+            return
+        with urlopen(f'{MEDIA_ORIGIN}/assets/{name}', timeout=30) as response:
+            data = response.read()
+        if sha256(data).hexdigest() != expected_digest:
+            raise ValueError(f'Deploy media failed its checksum: {name}')
+        destination.write_bytes(data)
+
+    with ThreadPoolExecutor(max_workers=6) as executor:
+        list(executor.map(fetch_media, manifest.items()))
+    print(f'Verified {len(manifest)} deploy media files.')
+
 for lang in COPY:
     for route in ['','menu','privacy']:generate(lang,route)
 for filename in ['site.css','site.js']:shutil.copy(ROOT/'src'/filename,OUT/'assets'/filename)

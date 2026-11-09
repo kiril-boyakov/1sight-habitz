@@ -1,0 +1,7 @@
+[build]
+command = "python3 build.py && python3 verify_site.py"
+publish = "dist"
+
+[build.environment]
+HABITS_SITE_ORIGIN = "https://resplendent-kangaroo-3d8964.netlify.app"
+HABITS_MEDIA_ORIGIN = "https://6af0fd5c71271702a21af63e--resplendent-kangaroo-3d8964.netlify.app"
